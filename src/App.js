@@ -1,12 +1,12 @@
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import NavBar from './components/NavBar';
-import Home from './components/Home'
-import TripList from './components/TripList'
-import TripNew from './components/TripNew'
-import JournalList from './components/JournalList'
-import Login from './components/Login';
-import Signup from './components/Signup';
+import NavBar from './components/static/NavBar';
+import Home from './components/static/Home'
+import TripList from './components/trips/TripList'
+import TripNew from './components/trips/TripNew'
+import JournalList from './components/journal/JournalList'
+import Login from './components/sessions/Login';
+import Signup from './components/sessions/Signup';
 
 
 function App() {
