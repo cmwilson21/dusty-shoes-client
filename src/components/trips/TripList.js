@@ -1,9 +1,15 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const TripList = () => {
+  const trips = useSelector(state => state.trips)
+
+
+  const tripsLi = trips.map((trip) => <li key={trip.id}>{trip.city}, {trip.country}</li>)
+
   return (
     <div>
-      <p>add list of desired trips here</p>
+      {tripsLi}
     </div>
   )
 }
