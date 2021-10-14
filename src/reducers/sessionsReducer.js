@@ -6,6 +6,8 @@
 const initialState = {
   currentUser: {
     id: 4,
+    first_name: "Courtney",
+    last_name: "Wilson",
     email: "test@test.com",
   },
   loggedIn: true

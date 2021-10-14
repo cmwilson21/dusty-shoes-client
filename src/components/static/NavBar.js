@@ -5,6 +5,10 @@ import {useSelector} from 'react-redux'
 
 const NavBar = () => {
   const loggedIn = useSelector(state => state.sessions.loggedIn)
+  const currentUser = useSelector(state => state.sessions.currentUser)
+
+
+  const firstName = `${currentUser.first_name}`
 
   if(loggedIn) {
     return (
@@ -13,6 +17,7 @@ const NavBar = () => {
         <NavLink className="navbar_link" to="/trips">Trips</NavLink>
         <NavLink className="navbar_link" to="/trips/new">Add A Trip</NavLink>
         <NavLink className="navbar_link" to="/journal">Travel Journal</NavLink>
+        <h2>Hello, {firstName}</h2>
       </div>
     )
   }
