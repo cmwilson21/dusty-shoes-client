@@ -1,13 +1,17 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 
 
 const NavBar = () => {
   const loggedIn = useSelector(state => state.sessions.loggedIn)
   const currentUser = useSelector(state => state.sessions.currentUser)
 
+  const logoutClick = e => {
+    e.preventDefault();
+  }
 
+  
   
   if(loggedIn) {
     const firstName = `${currentUser.first_name}`
@@ -17,6 +21,7 @@ const NavBar = () => {
         <NavLink className="navbar_link" to="/trips">Trips</NavLink>
         <NavLink className="navbar_link" to="/trips/new">Add A Trip</NavLink>
         <NavLink className="navbar_link" to="/journal">Travel Journal</NavLink>
+        <NavLink className="navbar_link" to="/logout">Logout</NavLink>
         <h2>Hello, {firstName}</h2>
       </div>
     )
