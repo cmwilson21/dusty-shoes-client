@@ -39,7 +39,7 @@ const TripNew = () => {
         <input type="text" id="country" name="country" placeholder="Enter country name" onChange={handleChange} />
         <br />
         <label htmlFor="image url">Image:</label>
-        <input type="text" id="image" name="image" placeholder="Enter image url" onChange={handleChange} />
+        <input type="text" id="image" name="image_url" placeholder="Enter image url" onChange={handleChange} />
         <br />
         {/* <label htmlFor="reason">Reason to Visit:</label> */}
         {/* <textarea style={{resize: "none"}} id="reason" name="reason" onChange={handleChange} /> */}
