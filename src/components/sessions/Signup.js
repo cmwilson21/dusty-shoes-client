@@ -20,11 +20,17 @@ const Signup = () => {
     })
   }
 
+  const handleSubmit = async e => {
+    e.preventDefault();
+    dispatch(signup(state))
+    history.push('/')
+  }
+
 
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         {/* <label htmlFor="first_name">First Name:</label> */}
          <input type="text" name="first_name" id="first_name" value={state.first_name} placeholder="First Name" autoFocus={true} onChange={handleChange}/>
         <br />
