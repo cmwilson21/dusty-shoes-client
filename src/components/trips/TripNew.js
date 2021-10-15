@@ -1,21 +1,48 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { addTrip } from '../../actions/trips'
+import { useHistory } from 'react-router'
 
 const TripNew = () => {
+  const currentUser = useSelector(state => state.sessions.currentUser)
+  const [state, setState] = useState({
+    city: "",
+    country: "",
+    image_url: ""
+  })
+  const history = useHistory()
+  const dispatch = useDispatch()
+
+  const handleChange = e => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    console.log("user", currentUser)
+    console.log("state", state)
+
+    dispatch(addTrip(state, currentUser))
+    history.push('/trips');
+  }
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="city">City:</label>
-        <input type="text" id="city" name="city" autoFocus={true} placeholder="Enter city name" />
+        <input type="text" id="city" name="city" autoFocus={true} placeholder="Enter city name" onChange={handleChange}/>
         <br />
         <label htmlFor="country">Country:</label>
-        <input type="text" id="country" name="country" placeholder="Enter country name" />
+        <input type="text" id="country" name="country" placeholder="Enter country name" onChange={handleChange} />
         <br />
         <label htmlFor="image url">Image:</label>
-        <input type="text" id="image" name="image" placeholder="Enter image url" />
+        <input type="text" id="image" name="image" placeholder="Enter image url" onChange={handleChange} />
         <br />
-        <label htmlFor="reason">Reason to Visit:</label>
-        <textarea style={{resize: "none"}} id="reason" name="reason" />
+        {/* <label htmlFor="reason">Reason to Visit:</label> */}
+        {/* <textarea style={{resize: "none"}} id="reason" name="reason" onChange={handleChange} /> */}
         <br />
         <input type="submit" value="Add Trip" />
       </form>
