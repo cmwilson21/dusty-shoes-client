@@ -4,3 +4,9 @@ export const signup = details => {
     payload: details
   }
 }
+
+export const logout = () => {
+  return {
+    type: "LOGOUT"
+  }
+}

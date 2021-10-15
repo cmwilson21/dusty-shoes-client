@@ -14,13 +14,15 @@ const initialState = {
   loggedIn: false
 }
 
-const sessionsReducer = (state=initialState, action) => {
-  switch(action.type) {
+const sessionsReducer = (state = initialState, action) => {
+  switch (action.type) {
     case "SIGNUP":
       return {
         currentUser: action.payload,
         loggedIn: true
       }
+    case "LOGOUT":
+      return initialState;
     default:
       return state;
   }
