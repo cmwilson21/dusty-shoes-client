@@ -5,13 +5,13 @@
 // added dummy data for now in initialstate 
 
 const initialState = {
-  currentUser: {
-    id: 4,
-    first_name: "Courtney",
-    last_name: "Wilson",
-    email: "test@test.com",
-  },
-  loggedIn: true
+  currentUser: {},
+  //   id: 4,
+  //   first_name: "Courtney",
+  //   last_name: "Wilson",
+  //   email: "test@test.com",
+  // },
+  loggedIn: false
 }
 
 const sessionsReducer = (state=initialState, action) => {

@@ -7,6 +7,7 @@ import TripNew from './components/trips/TripNew'
 import JournalList from './components/journal/JournalList'
 import Login from './components/sessions/Login';
 import Signup from './components/sessions/Signup';
+import TripDetails from './components/trips/TripDetails';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
        <Route exact path="/" component={Home} />
        <Route exact path="/trips" component={TripList} />
        <Route exact path="/trips/new" component={TripNew} />
+       <Route exact path="/trips/:id" component={TripDetails} />
        <Route exact path="/journal" component={JournalList} />
        <Route exat path="/login" component={Login} />
        <Route exat path="/signup" component={Signup} />

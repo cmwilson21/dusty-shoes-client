@@ -8,9 +8,9 @@ const NavBar = () => {
   const currentUser = useSelector(state => state.sessions.currentUser)
 
 
-  const firstName = `${currentUser.first_name}`
-
+  
   if(loggedIn) {
+    const firstName = `${currentUser.first_name}`
     return (
       <div>
         <NavLink className="navbar_link" to="/">Home</NavLink>

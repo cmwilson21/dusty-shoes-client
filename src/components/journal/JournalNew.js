@@ -4,6 +4,11 @@ const JournalNew = () => {
   return (
     <div>
       <p>Add new journal entry form here. This would actually be an update once the "Been there" button has been clicked. It will redirect you to a page where the "reason to visit" changes to a journal entry.</p>
+      <form>
+        <label htmlFor="journal">Journal:</label>
+        <input type="text" name="journal" id="journal" placeholder="Enter a few notes about your trip" />
+        <input type="submit" value="Add Journal" />
+      </form>
     </div>
   )
 }
