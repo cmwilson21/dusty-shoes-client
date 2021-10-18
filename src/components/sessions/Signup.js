@@ -24,8 +24,8 @@ const Signup = () => {
     e.preventDefault();
     
     console.log('state', state)
-    dispatch(signup(state))
-    history.push('/')
+    dispatch(signup(state, history))
+    // history.push('/')
   }
 
 
