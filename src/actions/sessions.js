@@ -12,6 +12,7 @@ export const signup = (details, history) => {
       })
       
       const data = await resp.json();
+      console.log('data', data)
       localStorage.setItem('jwt', data.jwt)
       dispatch({type: "LOGIN", payload: data})
       dispatch({type: "COMPLETED_REQUESTING"});
@@ -36,6 +37,7 @@ export const login = (details, history) => {
     // if(data.errors) {
       // dispatch({ type: "ERRORS", payload: data.errors })
     // } else {
+      console.log('data', data)
       localStorage.setItem('jwt', data.jwt);
       // dispatch({ type: "CLEAR_ERRORS" })
       dispatch({ type: "LOGIN", payload: data });
