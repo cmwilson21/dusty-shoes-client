@@ -34,14 +34,14 @@ export const login = (details, history) => {
       body: JSON.stringify(details)
     })
     const data = await resp.json();
-    // if(data.errors) {
-      // dispatch({ type: "ERRORS", payload: data.errors })
-    // } else {
+    if(data.errors) {
+      dispatch({ type: "ERRORS", payload: data.errors })
+    } else {
       console.log('data', data)
       localStorage.setItem('jwt', data.jwt);
-      // dispatch({ type: "CLEAR_ERRORS" })
+      dispatch({ type: "CLEAR_ERRORS" })
       dispatch({ type: "LOGIN", payload: data });
-    // }
+    }
     dispatch({ type: "COMPLETED_REQUESTING" });
     history.push('/')
   }
@@ -74,6 +74,7 @@ export const getCurrentUser = () => {
 
 
 export const logout = () => {
+  localStorage.removeItem('jwt')
   return {
     type: "LOGOUT"
   }
