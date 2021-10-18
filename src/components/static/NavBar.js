@@ -17,7 +17,7 @@ const NavBar = () => {
   
   
   if(loggedIn) {
-    const firstName = `${currentUser.first_name}`
+    // const firstName = `${currentUser.first_name}`
     return (
       <div>
         <NavLink className="navbar_link" to="/">Home</NavLink>
@@ -25,7 +25,7 @@ const NavBar = () => {
         <NavLink className="navbar_link" to="/trips/new">Add A Trip</NavLink>
         <NavLink className="navbar_link" to="/journal">Travel Journal</NavLink>
         <NavLink className="navbar_link" to="/logout" onClick={logoutClick}>Logout</NavLink>
-        <h2>Hello, {firstName}</h2>
+        {/* <h2>Hello, {firstName}</h2> */}
       </div>
     )
   }

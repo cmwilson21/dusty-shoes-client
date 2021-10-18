@@ -1,16 +1,27 @@
 import './App.css';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import React, {useEffect} from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import {getCurrentUser} from './actions/sessions'
 import NavBar from './components/static/NavBar';
-import Home from './components/static/Home'
-import TripList from './components/trips/TripList'
-import TripNew from './components/trips/TripNew'
-import JournalList from './components/journal/JournalList'
+import Home from './components/static/Home';
+import TripList from './components/trips/TripList';
+import TripNew from './components/trips/TripNew';
+import JournalList from './components/journal/JournalList';
 import Login from './components/sessions/Login';
 import Signup from './components/sessions/Signup';
 import TripDetails from './components/trips/TripDetails';
 
 
 function App() {
+  const requesting = useSelector(state => state.requesting);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCurrentUser())
+  }, [])
+
+
   return (
     <Router>
     <div className="App">

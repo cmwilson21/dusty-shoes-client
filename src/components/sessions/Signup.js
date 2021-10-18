@@ -20,7 +20,7 @@ const Signup = () => {
     })
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     
     console.log('state', state)
