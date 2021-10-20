@@ -8,6 +8,9 @@ import { loadTrips } from '../../actions/trips'
 const TripList = () => {
   const trips = useSelector(state => state.trips)
   const requesting = useSelector(state => state.requesting)
+  const currentUser = useSelector(state => state.sessions.currentUser)
+
+
   const history = useHistory();
   const dispatch = useDispatch()
   const loggedIn = useSelector(state => state.sessions.loggedIn);
@@ -17,7 +20,8 @@ const TripList = () => {
   useEffect(() => {
     // clearErrors();
     if(loggedIn) {
-      dispatch(loadTrips(localStorage.getItem('jwt')))
+      dispatch(loadTrips(localStorage.getItem('jwt'), currentUser))
+      // console.log("trips list currentUser", currentUser)
     } else {
       history.push("/login")
     }
@@ -25,7 +29,7 @@ const TripList = () => {
 
 
 
-  const tripsLi = trips.map((trip) => <li user={trip.user.id} key={trip.id}><NavLink to={`/trips/${ trip.id }`}>{ trip.city }, {trip.country}</NavLink></li>)
+  const tripsLi = trips.map((trip) => <li key={trip.id}><NavLink to={`/trips/${ trip.id }`}>{ trip.city }, {trip.country}</NavLink></li>)
 
   if(requesting) {
     return <h1>Loading...</h1>

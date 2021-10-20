@@ -23,7 +23,7 @@ const TripDetails = () => {
     })
     const data = await resp.json();
     setTrip(data)
-    console.log('trip from details', data)
+    // console.log('trip from details', data)
   }
 
   const loadUser = async () => {
@@ -36,7 +36,7 @@ const TripDetails = () => {
     });
     const data = await resp.json();
     setUser(data);
-    console.log("user from details", data)
+    // console.log("user from details", data)
   }
 
   const load = async () => {

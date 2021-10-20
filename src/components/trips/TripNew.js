@@ -22,9 +22,7 @@ const TripNew = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log("user tripnew", currentUser)
-    console.log("state", state)
-    debugger
+    // debugger
 
     dispatch(addTrip(state, currentUser))
     history.push('/trips');
