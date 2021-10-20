@@ -22,9 +22,8 @@ function App() {
     dispatch(getCurrentUser())
   }, [])
 
-  if (requesting) {
-    return <h2>Loading...</h2>
-  }
+  // if (requesting) return <h2>Loading...</h2>
+  
 
 
   return (
