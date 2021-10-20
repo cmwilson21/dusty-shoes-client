@@ -22,8 +22,9 @@ const TripNew = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log("user", currentUser)
+    console.log("user tripnew", currentUser)
     console.log("state", state)
+    debugger
 
     dispatch(addTrip(state, currentUser))
     history.push('/trips');
@@ -33,13 +34,13 @@ const TripNew = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="city">City:</label>
-        <input type="text" id="city" name="city" autoFocus={true} placeholder="Enter city name" onChange={handleChange}/>
+        <input type="text" id="city" name="city" autoFocus={true} placeholder="Enter city name" value={state.city} onChange={handleChange}/>
         <br />
         <label htmlFor="country">Country:</label>
-        <input type="text" id="country" name="country" placeholder="Enter country name" onChange={handleChange} />
+        <input type="text" id="country" name="country" placeholder="Enter country name" value={state.country} onChange={handleChange} />
         <br />
         <label htmlFor="image url">Image:</label>
-        <input type="text" id="image" name="image_url" placeholder="Enter image url" onChange={handleChange} />
+        <input type="text" id="image" name="image_url" placeholder="Enter image url" value={state.image_url} onChange={handleChange} />
         <br />
         {/* <label htmlFor="reason">Reason to Visit:</label> */}
         {/* <textarea style={{resize: "none"}} id="reason" name="reason" onChange={handleChange} /> */}

@@ -37,7 +37,7 @@ export const login = (details, history) => {
     if(data.errors) {
       dispatch({ type: "ERRORS", payload: data.errors })
     } else {
-      console.log('data', data)
+      console.log('data from login', data)
       localStorage.setItem('jwt', data.jwt);
       dispatch({ type: "CLEAR_ERRORS" })
       dispatch({ type: "LOGIN", payload: data });
