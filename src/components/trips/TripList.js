@@ -27,9 +27,15 @@ const TripList = () => {
     }
   }, [loggedIn])
 
+  const removeTrip = id => {trips.filter(trip => trip.id !== id)}
 
+  const deleteTrip = async id => {
+    await fetch(`http://localhost:3001/api/v1/trips/${id}`, {method: "DELETE"})
+    removeTrip(id);
+    // history.push("/trips")
+  }
 
-  const tripsLi = trips.map((trip) => <li key={trip.id}><NavLink to={`/trips/${ trip.id }`}>{ trip.city }, {trip.country}</NavLink></li>)
+  const tripsLi = trips.map((trip) => <li key={trip.id}><NavLink to={`/trips/${ trip.id }`}>{ trip.city }, {trip.country}</NavLink><button onClick={() => deleteTrip(trip.id)}>Delete</button></li>)
 
   if(requesting) {
     return <h1>Loading...</h1>
