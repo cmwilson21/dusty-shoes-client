@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { getCurrentUser } from './actions/sessions'
 import NavBar from './components/static/NavBar';
 import Home from './components/static/Home';
@@ -15,7 +15,7 @@ import Errors from './components/static/Errors';
 
 
 function App() {
-  const requesting = useSelector(state => state.requesting);
+  // const requesting = useSelector(state => state.requesting);
   const dispatch = useDispatch();
 
   useEffect(() => {
