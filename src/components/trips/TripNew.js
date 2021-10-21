@@ -8,7 +8,8 @@ const TripNew = () => {
   const [state, setState] = useState({
     city: "",
     country: "",
-    image_url: ""
+    image_url: "",
+    user_id: currentUser.id
   })
   const history = useHistory()
   const dispatch = useDispatch()
@@ -25,6 +26,7 @@ const TripNew = () => {
     // debugger
 
     dispatch(addTrip(state, currentUser))
+    console.log("tripnew user", currentUser.id)
     history.push('/trips');
   }
 

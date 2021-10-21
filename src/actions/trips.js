@@ -1,13 +1,38 @@
 // this is updating state 
 
-export const addTrip = (details, currentUser) => {
-  const payload = {...details,
-    user_id: currentUser.id
-  }
+// export const addTrip = (details, currentUser) => {
+//   const payload = {...details,
+//     user_id: currentUser.id
+//   }
 
-  return {
-    type: "ADD_TRIP",
-    payload
+//   return {
+//     type: "ADD_TRIP",
+//     payload
+//   }
+// }
+
+// export const addTrip = (details, currentUser) => {
+//   return async (dispatch) => {
+//     const payload = {...details, 
+//       user_id: currentUser.id}
+//     dispatch({type: "ADD_TRIP", payload})
+//   }
+// }
+
+
+export const addTrip = (details, token) => {
+  return async (dispatch) => {
+    const resp = await fetch(`http://localhost:3001/api/v1/trips/`, {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": `bear ${token}`
+      },
+      body: JSON.stringify(details)
+    })
+    const data = await resp.json()
+    dispatch({type: "ADD_TRIP", payload: data})
   }
 }
 

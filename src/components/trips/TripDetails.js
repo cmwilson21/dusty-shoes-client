@@ -27,7 +27,7 @@ const TripDetails = () => {
   }
 
   const loadUser = async () => {
-    const resp = await fetch('http://localhost:3001/api/v1/users/1', {
+    const resp = await fetch(`http://localhost:3001/api/v1/users/${id}`, {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
