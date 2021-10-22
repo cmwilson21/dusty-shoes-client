@@ -21,7 +21,7 @@ const Login = () => {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(login(state, history))
-    console.log('state', state)
+    // console.log('state', state)
   }
 
 

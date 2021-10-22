@@ -1,19 +1,18 @@
 import React, {useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-// import { getCurrentUser } from '../../actions/sessions'
 import { useHistory } from 'react-router-dom'
 import {NavLink} from 'react-router-dom'
 import { loadTrips } from '../../actions/trips'
+import { baseURL } from '../../Globals';
+// import { getCurrentUser } from '../../actions/sessions'
 
 const TripList = () => {
   const trips = useSelector(state => state.trips)
   const requesting = useSelector(state => state.requesting)
   const currentUser = useSelector(state => state.sessions.currentUser)
-
-
+  const loggedIn = useSelector(state => state.sessions.loggedIn);
   const history = useHistory();
   const dispatch = useDispatch()
-  const loggedIn = useSelector(state => state.sessions.loggedIn);
 
 
 
@@ -30,10 +29,22 @@ const TripList = () => {
   const removeTrip = id => {trips.filter(trip => trip.id !== id)}
 
   const deleteTrip = async id => {
-    await fetch(`http://localhost:3001/api/v1/trips/${id}`, {method: "DELETE"})
+    await fetch(baseURL + `/api/v1/trips/${id}`, {method: "DELETE"})
     removeTrip(id);
     // history.push("/trips")
   }
+
+  // const handleClick = (destination) => {
+  //   setClickedTrips([...clickedTrips, destination])
+  //   console.log(destination)
+  // }
+
+  // const moveTrip = (destination) => {
+  //   const newList = clickedTrips.filter((clickedTrip) => destination.id !== clickedTrip.id);
+  //   setClickedTrips(newList)
+  // }
+
+
 
   const tripsLi = trips.map((trip) => <li key={trip.id}><NavLink to={`/trips/${ trip.id }`}>{ trip.city }, {trip.country}</NavLink><button onClick={() => deleteTrip(trip.id)}>Delete</button></li>)
 

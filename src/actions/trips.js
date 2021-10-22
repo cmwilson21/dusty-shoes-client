@@ -1,5 +1,7 @@
 // this is updating state 
 
+import { baseURL } from "../Globals"
+
 // export const addTrip = (details, currentUser) => {
 //   const payload = {...details,
 //     user_id: currentUser.id
@@ -22,7 +24,7 @@
 
 export const addTrip = (details, token) => {
   return async (dispatch) => {
-    const resp = await fetch(`http://localhost:3001/api/v1/trips/`, {
+    const resp = await fetch(baseURL + `/api/v1/trips/`, {
       method: "POST",
       headers: {
         "Accept": "application/json",
@@ -41,7 +43,7 @@ export const loadTrips = (token, currentUser) => {
   // console.log("current user trips action 2", currentUser)
   return async dispatch => {
     dispatch({type: "REQUESTING"});
-    const resp = await fetch(`http://localhost:3001/api/v1/users/${currentUser.id}/trips`, {
+    const resp = await fetch(baseURL + `/api/v1/users/${currentUser.id}/trips`, {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",

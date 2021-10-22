@@ -23,7 +23,7 @@ const Signup = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     
-    console.log('state', state)
+    // console.log('state', state)
     dispatch(signup(state, history))
     // history.push('/')
   }

@@ -1,8 +1,10 @@
+import { baseURL } from "../Globals";
+
 export const signup = (details, history) => {
   return  async (dispatch) => {
       dispatch({type: "REQUESTING"});
       
-      const resp = await fetch('http://localhost:3001/api/v1/signup', {
+      const resp = await fetch(baseURL + '/api/v1/signup', {
         method: "POST",
         headers: {
           "Accept": "application/json",
@@ -12,7 +14,7 @@ export const signup = (details, history) => {
       })
       
       const data = await resp.json();
-      console.log('data', data)
+      // console.log('data', data)
       localStorage.setItem('jwt', data.jwt)
       dispatch({type: "LOGIN", payload: data})
       dispatch({type: "COMPLETED_REQUESTING"});
@@ -25,7 +27,7 @@ export const signup = (details, history) => {
 export const login = (details, history) => {
   return async dispatch => {
     dispatch({type: "REQUESTING"});
-    const resp = await fetch('http://localhost:3001/api/v1/login', {
+    const resp = await fetch(baseURL + '/api/v1/login', {
       method: "POST",
       headers: {
         "Accept": "application/json",
@@ -37,7 +39,7 @@ export const login = (details, history) => {
     if(data.errors) {
       dispatch({ type: "ERRORS", payload: data.errors })
     } else {
-      console.log('data from login', data)
+      // console.log('data from login', data)
       localStorage.setItem('jwt', data.jwt);
       dispatch({ type: "CLEAR_ERRORS" })
       dispatch({ type: "LOGIN", payload: data });
@@ -52,7 +54,7 @@ export const login = (details, history) => {
 export const getCurrentUser = () => {
   return async dispatch => {
     dispatch({type: "REQUESTING"})
-    const resp = await fetch('http://localhost:3001/api/v1/get-current-user', {
+    const resp = await fetch(baseURL + '/api/v1/get-current-user', {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
