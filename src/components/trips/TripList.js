@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import {NavLink} from 'react-router-dom'
 import { loadTrips } from '../../actions/trips'
+// import { loadToGo } from '../../actions/trips'
 import { baseURL } from '../../Globals';
 // import { getCurrentUser } from '../../actions/sessions'
 
@@ -14,6 +15,17 @@ const TripList = () => {
   const history = useHistory();
   const dispatch = useDispatch()
 
+
+
+  // useEffect(() => {
+  //   // clearErrors();
+  //   if(loggedIn) {
+  //     dispatch(loadToGo(localStorage.getItem('jwt'), currentUser))
+  //     // console.log("trips list currentUser", currentUser)
+  //   } else {
+  //     history.push("/login")
+  //   }
+  // }, [loggedIn])
 
 
   useEffect(() => {
@@ -46,7 +58,24 @@ const TripList = () => {
 
 
 
-  const tripsLi = trips.map((trip) => <li key={trip.id}><NavLink to={`/trips/${ trip.id }`}>{ trip.city }, {trip.country}</NavLink><button onClick={() => deleteTrip(trip.id)}>Delete</button></li>)
+  // const tripsLi = trips.map((trip) => {
+  //   if(trip.been_there == true) {
+  //   return  <li key={trip.id}><NavLink to={`/trips/${ trip.id }`}>{ trip.city }, {trip.country}</NavLink><button onClick={() => deleteTrip(trip.id)}>Delete</button></li>}})
+
+  const tripsLi = trips.map((trip, index) => (
+    <div key={index}>
+      {trip.been_there == false ? (
+        <li>
+        <NavLink to={`/trips/${trip.id}`}>
+          {trip.city}, {trip.country}
+        </NavLink>
+          <button onClick={() => deleteTrip(trip.id)}>Delete</button>
+      </li>
+        ) : (
+          null
+      )}
+    </div>
+  ))
 
   if(requesting) {
     return <h1>Loading...</h1>

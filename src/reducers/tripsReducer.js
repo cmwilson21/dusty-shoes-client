@@ -14,4 +14,18 @@ const tripsReducer = (state=initialState, action) => {
   }
 }
 
+
+
+
+// const tripsReducer = (state=initialState, action) => {
+//   switch(action.type) {
+//     case "ADD_TRIP":
+//       return [...state, action.payload]
+//     case "SET_TRIPS":
+//       return action.payload
+//     default:
+//       return state
+//   }
+// }
+
 export default tripsReducer;

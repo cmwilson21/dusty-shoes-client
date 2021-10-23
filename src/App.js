@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect } from 'react';
+import React, { useEffect} from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useDispatch} from 'react-redux';
 import { getCurrentUser } from './actions/sessions'
@@ -17,18 +17,19 @@ import Errors from './components/static/Errors';
 function App() {
   // const requesting = useSelector(state => state.requesting);
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     dispatch(getCurrentUser())
   }, [])
-
+  
   // if (requesting) return <h2>Loading...</h2>
   
-
-
+  
+  
   return (
     <Router>
       <div className="App">
+      {/* <p>{apiData}</p> */}
       <h1>Dusty Shoes</h1>
       <NavBar />
       <Errors />

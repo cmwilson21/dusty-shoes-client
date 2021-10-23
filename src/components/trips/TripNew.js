@@ -9,7 +9,8 @@ const TripNew = () => {
     city: "",
     country: "",
     image_url: "",
-    user_id: currentUser.id
+    user_id: currentUser.id,
+    been_there: false
   })
   const history = useHistory()
   const dispatch = useDispatch()
