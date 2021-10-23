@@ -53,7 +53,7 @@ export const loadTrips = (token, currentUser) => {
     const data = await resp.json();
     dispatch({type: "SET_TRIPS", payload: data})
     console.log("data from trips action", data)
-    // debugger
+    debugger
     dispatch({type: "COMPLETED_REQUESTING"})
   }
 }

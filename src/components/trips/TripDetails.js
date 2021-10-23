@@ -75,6 +75,8 @@ const TripDetails = () => {
   //   setClickedTrips(newList)
   // }
 
+  // onClick action that turns the been_there from false to true so it populates on the back end journal list
+
 
 
   if(loading) {return <h2>Loading...</h2>}
