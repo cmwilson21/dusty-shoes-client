@@ -27,7 +27,7 @@ const TripNew = () => {
     // debugger
 
     dispatch(addTrip(state, currentUser))
-    console.log("tripnew user", currentUser.id)
+    // console.log("tripnew user", currentUser.id)
     history.push('/trips');
   }
 

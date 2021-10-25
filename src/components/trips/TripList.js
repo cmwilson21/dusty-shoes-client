@@ -41,7 +41,7 @@ const TripList = () => {
 
   const tripsLi = trips.map((trip, index) => (
     <div key={index}>
-      {trip.been_there == false ? (
+      {trip.been_there === false ? (
         <li>
         <NavLink to={`/trips/${trip.id}`}>
           {trip.city}, {trip.country}
