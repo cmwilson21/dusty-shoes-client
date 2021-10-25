@@ -3,14 +3,14 @@ import {useParams, useHistory} from 'react-router-dom'
 import { NavLink} from 'react-router-dom';
 import { baseURL } from '../../Globals';
 // import {useHistory} from 'react-router-dom'
-// import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const TripDetails = () => {
   const {id} = useParams();
   const history = useHistory();
   const [trip, setTrip] = useState({})
   const [loading, setLoading] = useState(true)
-  // const trips = useSelector(state => state.trips)
+  const trips = useSelector(state => state.trips)
   // const [journal, setJournal] = useState([])
   // const [user, setUser] = useState({})
   // const requesting = useSelector(state => state.requesting)
@@ -77,7 +77,15 @@ const TripDetails = () => {
 
   // onClick action that turns the been_there from false to true so it populates on the back end journal list
 
+  // const been_there = trips.map((trip) => trip.been_there = false ? true)
 
+  // const handleClick = (been_there) => {
+  //   if(trips.been_there == false)
+  //     return (trips.been_there == true)
+  //   console.log("been there click", trip)
+  // }
+
+  
 
   if(loading) {return <h2>Loading...</h2>}
 
@@ -87,7 +95,8 @@ const TripDetails = () => {
       <h2>{trip.city}, {trip.country}</h2>
       <img src={trip.image_url} alt="travel pic" />
       <br />
-      <NavLink to={`/journal`}><button  >Been There</button></NavLink>
+      {/* <NavLink to={`/journal`}><button onClick={handleClick} >Been There</button></NavLink> */}
+      <NavLink to={`/journal`}><button onClick={() => trip.been_there !== true} >Been There</button></NavLink>
     </div>
   )
 }

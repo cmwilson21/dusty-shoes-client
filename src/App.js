@@ -16,8 +16,14 @@ import Errors from './components/static/Errors';
 
 function App() {
   // const requesting = useSelector(state => state.requesting);
-  const dispatch = useDispatch();
   
+  const dispatch = useDispatch();
+
+
+
+
+
+
   useEffect(() => {
     dispatch(getCurrentUser())
   }, [])
@@ -29,8 +35,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-      {/* <p>{apiData}</p> */}
       <h1>Dusty Shoes</h1>
+      
       <NavBar />
       <Errors />
         <Switch>

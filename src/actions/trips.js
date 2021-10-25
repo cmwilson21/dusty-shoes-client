@@ -52,11 +52,34 @@ export const loadTrips = (token, currentUser) => {
     })
     const data = await resp.json();
     dispatch({type: "SET_TRIPS", payload: data})
-    console.log("data from trips action", data)
-    debugger
+    // console.log("data from trips action", data)
+    // debugger
     dispatch({type: "COMPLETED_REQUESTING"})
   }
 }
+
+// export const deleteTrip = (id, index) => {
+//   return async dispatch => {
+//     dispatch({type: "REQUESTING"});
+//     const resp = await fetch(baseURL + `/api/v1/trips/${id}`, {method: "DELETE"})
+//     dispatch({
+//       type: "DELETE_TRIP",
+//       payload: index
+//     })
+//     dispatch({type: "COMPLETED_REQUESTING"})
+// }
+// }
+
+// export const deleteTrip = (index) => {
+//   dispatch({
+//     type: "DELETE_TRIP",
+//     payload: index
+//   })
+// }
+
+// export const deleteTrip = (index) => {
+//   dispatch({type: "DELETE_TRIP", payload: index})
+// }
 
 
 // instead of loadTrips, make a loadBeenThere and a loadToGo
