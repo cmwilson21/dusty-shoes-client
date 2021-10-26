@@ -55,13 +55,11 @@ const TripDetails = () => {
     }
     fetch(`${baseURL}/api/v1/trips/${id}`, options)
     history.push(`/journal`)
-    // load()
-    console.log(body)
   }
 
 
 
-  console.log("beenThere", trip.been_there)
+  // console.log("beenThere", trip.been_there)
   
   
 

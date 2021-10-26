@@ -16,22 +16,27 @@ import Errors from './components/static/Errors';
 
 function App() {
   // const requesting = useSelector(state => state.requesting);
-  // const [weather, setWeather] = useState({})
+  // const city = 'london'
+  const [weather, setWeather] = useState({})
+  // const apiKey = process.env.REACT_APP_API_KEY;
+  const apiKey = '069caffaa91daf864764d9b632ee4120'
+  // const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city},uk&APPID=${apiKey}`
 
-  // useEffect(() => {
-  //   getData();
-  //   async function getData() {
-  //     const response = await fetch("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=069caffaa91daf864764d9b632ee4120");
-  //     const data = await response.json()
-  //     setWeather(data);
-  //   }
-  // }, [setWeather])
 
-  // const tempMap = weather.map((weath, index) => (
-  //   <div key={index}>
-  //     {weath.main.temp}
-  //   </div>
-  // ))
+  useEffect(() => {
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=london,uk&APPID=${apiKey}`)
+    .then((res) => res.json())
+    .then((data) => {
+      setWeather(data.main)
+    })
+  } 
+  , [])
+  console.log("weather", weather)
+
+  const kelvinToFarenheight = (k) => {
+    return (((k - 273.15) * 1.8) + 32).toFixed()
+  }
+
   
   const dispatch = useDispatch();
 
@@ -52,7 +57,10 @@ function App() {
     <Router>
       <div className="App">
       <h1>Dusty Shoes</h1>
-      {/* {tempMap} */}
+      {/* {weather.temp} */}
+      <div>
+        <p>London Current Temp: {kelvinToFarenheight(weather.temp)}</p>
+      </div>
       <NavBar />
       <Errors />
         <Switch>
