@@ -1,17 +1,17 @@
 import React, {useState, useEffect} from 'react'
 import {useParams, useHistory} from 'react-router-dom'
-import { NavLink} from 'react-router-dom';
+// import { NavLink} from 'react-router-dom';
 import { baseURL } from '../../Globals';
 // import {useHistory} from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { loadTrips } from '../../actions/trips';
+// import { loadTrips } from '../../actions/trips';
 
 const TripDetails = () => {
   const {id} = useParams();
   const history = useHistory();
   const [trip, setTrip] = useState({})
   const [loading, setLoading] = useState(true)
-  const trips = useSelector(state => state.trips)
+  // const trips = useSelector(state => state.trips)
   
 
 
@@ -72,9 +72,6 @@ const TripDetails = () => {
       <h2>{trip.city}, {trip.country}</h2>
       <img src={trip.image_url} alt="travel pic" />
       <br />
-      {/* <NavLink to={`/journal`}><button onClick={handleClick} >Been There</button></NavLink> */}
-      {/* <NavLink to={`/journal`}><button onClick={() => setTrip(trip.been_there === true)} >Been There</button></NavLink> */}
-      {/* <NavLink to={`/journal`}><button onClick={() => setTrip(trip.been_there = !trip.been_there)} >Been There</button></NavLink> */}
       <button onClick={handleClick}>Been There</button>
     </div>
   )

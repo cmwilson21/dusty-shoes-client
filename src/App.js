@@ -31,7 +31,7 @@ function App() {
     })
   } 
   , [])
-  console.log("weather", weather)
+  // console.log("weather", weather)
 
   const kelvinToFarenheight = (k) => {
     return (((k - 273.15) * 1.8) + 32).toFixed()
@@ -47,7 +47,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getCurrentUser())
-  }, [])
+  }, [dispatch])
   
   // if (requesting) return <h2>Loading...</h2>
   
@@ -59,7 +59,7 @@ function App() {
       <h1>Dusty Shoes</h1>
       {/* {weather.temp} */}
       <div>
-        <p>London Current Temp: {kelvinToFarenheight(weather.temp)}</p>
+        <p>London Current Temp: {kelvinToFarenheight(weather.temp)}F</p>
       </div>
       <NavBar />
       <Errors />
