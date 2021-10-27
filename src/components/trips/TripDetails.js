@@ -65,6 +65,11 @@ const TripDetails = () => {
     history.push(`/journal`)
   }
 
+  const handleJournal = () => {
+    history.push(`/journal/new`)
+    console.log(handleJournal)
+  }
+
 
 
   console.log("beenThere", trip.been_there)
@@ -74,12 +79,10 @@ const TripDetails = () => {
   if(loading) {return <h2>Loading...</h2>}
 
   return (
-    //  need a way to switch up the details page if trip.been_there === true ? <button>Add Review</button> else <button>Been There</button>
     <div>
       {/* <Grid> */}
         {/* <Paper> */}
           <Card style={{margin: "0 750px 0 750px"}}item>
-            {/* try creating a trip card here that passes in the below stuff and also  */}
             <CardContent >{trip.city}, {trip.country}
             <br/>
             <img style={{marginTop: "8px"}} src={trip.image_url} alt="travel pic" />
@@ -87,7 +90,7 @@ const TripDetails = () => {
             {/* <p style={{textDecoration: "underline"}}>Why do you want to go?</p> */}
             <p>{trip.reason}</p>
             </CardContent>
-            {trip.been_there ? <Button>Add Journal</Button> : <Button onClick={handleClick}>Been There</Button>}
+            {trip.been_there ? <Button onClick={handleJournal}>Add Journal</Button> : <Button onClick={handleClick}>Been There</Button>}
           </Card>
         {/* </Paper> */}
       {/* </Grid> */}

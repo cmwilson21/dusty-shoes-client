@@ -9,6 +9,7 @@ import Home from './components/static/Home';
 import TripList from './components/trips/TripList';
 import TripNew from './components/trips/TripNew';
 import JournalList from './components/journal/JournalList';
+import JournalNew from './components/journal/JournalNew'
 import Login from './components/sessions/Login';
 import Signup from './components/sessions/Signup';
 import TripDetails from './components/trips/TripDetails';
@@ -76,6 +77,7 @@ function App() {
             <Route exact path="/trips/new" component={TripNew} />
             <Route exact path="/trips/:id" component={TripDetails} />
             <Route exact path="/journal" component={JournalList} />
+            <Route exact path="/journal/new" component={JournalNew} />
             <Route exat path="/login" component={Login} />
             <Route exat path="/signup" component={Signup} />
           </Switch>
