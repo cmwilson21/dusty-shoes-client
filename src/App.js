@@ -47,14 +47,16 @@ function App() {
   }, [dispatch])
   
   // if (requesting) return <h2>Loading...</h2>
-  
+  const d = new Date();
+  let year = d.getFullYear()
   
   
   return (
     <Router>
       <div className="App">
-      <h1>Dusty Shoes</h1>
+      {/* <h2>Dusty Shoes</h2> */}
       <NavBar />
+      {/* <h2>Welcome to Dusty Shoes!</h2> */}
       {/* {weather.temp} */}
       <div class="weather">
         <p>London Current Temp: {kelvinToFarenheight(weather.temp)}F</p>
@@ -75,6 +77,7 @@ function App() {
           <Route exat path="/signup" component={Signup} />
         </Switch>
       </div>
+      <footer align="center" className="footer--pin">Dusty Shoes {year}</footer>
     </Router>
   );
 }

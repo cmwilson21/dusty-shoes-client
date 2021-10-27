@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  min-height: calc(100vh - 34px);
 }
 
 .App-logo {
@@ -63,7 +64,12 @@
   float: left;
 }
 
-
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  /* align-items: 'center'; */
+}
 
 .home {
   width: 35%;
