@@ -1,13 +1,14 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { loadTrips } from '../../actions/trips'
 // import { deleteTrip } from '../../actions/trips'
 // import { loadToGo } from '../../actions/trips'
 import { baseURL } from '../../Globals';
 // import { getCurrentUser } from '../../actions/sessions'
-import { Button } from '@mui/material'
+// import { Button } from '@mui/material'
+import { Grid, Card, Paper, CardContent, Button, Container } from '@mui/material'
 
 const TripList = () => {
   const trips = useSelector(state => state.trips)
@@ -21,7 +22,7 @@ const TripList = () => {
 
   useEffect(() => {
     // clearErrors();
-    if(loggedIn) {
+    if (loggedIn) {
       dispatch(loadTrips(localStorage.getItem('jwt'), currentUser))
       // console.log("trips list currentUser", currentUser)
     } else {
@@ -30,35 +31,39 @@ const TripList = () => {
   }, [loggedIn])
 
 
-  const removeTrip = id => {trips.filter(trip => trip.id !== id)}
+  const removeTrip = id => { trips.filter(trip => trip.id !== id) }
 
 
   const deleteTrip = async id => {
-    await fetch(baseURL + `/api/v1/trips/${id}`, {method: "DELETE"})
+    await fetch(baseURL + `/api/v1/trips/${id}`, { method: "DELETE" })
     removeTrip(id);
     dispatch(loadTrips(localStorage.getItem('jwt'), currentUser))
   }
 
 
   const tripsLi = trips.map((trip, index) => (
-    <div key={index}>
+    <div key={index} align="center">
       {trip.been_there === false ? (
-        <li>
-        <NavLink to={`/trips/${trip.id}`}>
-          {trip.city}, {trip.country}
-        </NavLink>
-          <Button onClick={() => deleteTrip(trip.id)}>Delete</Button>
-      </li>
-        ) : (
-          null
+        <Grid item md={3}>
+          <Card style={{ marginTop: "12px" }}>
+            <CardContent>
+              <NavLink to={`/trips/${trip.id}`}>
+                {trip.city}, {trip.country}
+              </NavLink>
+            </CardContent>
+            <Button onClick={() => deleteTrip(trip.id)}>Delete</Button>
+          </Card>
+        </Grid>
+      ) : (
+        null
       )}
     </div>
   ))
 
-  if(requesting) {
+  if (requesting) {
     return <h1>Loading...</h1>
   }
-  
+
 
   return (
     <div>
