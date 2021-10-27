@@ -1,6 +1,6 @@
 import React from 'react'
-import {NavLink, useHistory} from 'react-router-dom'
-import {useSelector, useDispatch} from 'react-redux'
+import { NavLink, useHistory } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../../actions/sessions'
 
 
@@ -16,29 +16,33 @@ const NavBar = () => {
     history.push('/')
   }
 
-  
-  
-  if(loggedIn) {
+
+
+  if (loggedIn) {
     const firstName = `${currentUser.first_name}`
     return (
       <div>
-        <NavLink className="navbar_link" to="/">Home</NavLink>
-        <NavLink className="navbar_link" to="/trips">Trips</NavLink>
-        <NavLink className="navbar_link" to="/trips/new">Add A Trip</NavLink>
-        <NavLink className="navbar_link" to="/journal">Travel Journal</NavLink>
-        <NavLink className="navbar_link" to="/logout" onClick={logoutClick}>Logout</NavLink>
-        <h2>Hello, {firstName}</h2>
+        <ul className="nav-ul">
+          <li className="nav-li"><NavLink className="navbar_link" to="/">Home</NavLink></li>
+          <li className="nav-li"><NavLink className="navbar_link" to="/trips">Trips</NavLink></li>
+          <li className="nav-li"><NavLink className="navbar_link" to="/trips/new">Add A Trip</NavLink></li>
+          <li className="nav-li"><NavLink className="navbar_link" to="/journal">Travel Journal</NavLink></li>
+          <li className="nav-li"><NavLink className="navbar_link" to="/logout" onClick={logoutClick}>Logout</NavLink></li>
+        <p style={{color: "white", textAlign: "right", marginRight: "55px"}}>Where to next, {firstName}?</p>
+        </ul>
       </div>
     )
   }
   return (
     <div>
-      <NavLink className="navbar_link" to="/">Home</NavLink>
-      {/* <NavLink className="navbar_link" to="/trips">Trips</NavLink> */}
-      {/* <NavLink className="navbar_link" to="/trips/new">Add A Trip</NavLink> */}
-      {/* <NavLink className="navbar_link" to="/journal">Travel Journal</NavLink> */}
-      <NavLink className="navbar_link" to="/login">Login</NavLink>
-      <NavLink className="navbar_link" to="/signup">Signup</NavLink>
+      <ul className="nav-ul">
+        <li className="nav-li"><NavLink className="navbar_link" to="/">Home</NavLink></li>
+        {/* <NavLink className="navbar_link" to="/trips">Trips</NavLink> */}
+        {/* <NavLink className="navbar_link" to="/trips/new">Add A Trip</NavLink> */}
+        {/* <NavLink className="navbar_link" to="/journal">Travel Journal</NavLink> */}
+        <li className="nav-li"><NavLink className="navbar_link" to="/login">Login</NavLink></li>
+        <li className="nav-li"><NavLink className="navbar_link" to="/signup">Signup</NavLink></li>
+      </ul>
     </div>
   )
 }

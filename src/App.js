@@ -16,7 +16,7 @@ import Errors from './components/static/Errors';
 
 function App() {
   // const requesting = useSelector(state => state.requesting);
-  // const city = 'london'
+  const city = 'london'
   const [weather, setWeather] = useState({})
   // const apiKey = process.env.REACT_APP_API_KEY;
   const apiKey = '069caffaa91daf864764d9b632ee4120'
@@ -24,14 +24,14 @@ function App() {
 
 
   useEffect(() => {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=london,uk&APPID=${apiKey}`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},uk&APPID=${apiKey}`)
     .then((res) => res.json())
     .then((data) => {
       setWeather(data.main)
     })
   } 
   , [])
-  // console.log("weather", weather)
+
 
   const kelvinToFarenheight = (k) => {
     return (((k - 273.15) * 1.8) + 32).toFixed()
@@ -57,11 +57,12 @@ function App() {
     <Router>
       <div className="App">
       <h1>Dusty Shoes</h1>
-      {/* {weather.temp} */}
-      <div>
-        <p>London Current Temp: {kelvinToFarenheight(weather.temp)}F</p>
-      </div>
       <NavBar />
+      {/* {weather.temp} */}
+      <div class="weather">
+        <p>London Current Temp: {kelvinToFarenheight(weather.temp)}F</p>
+        {/* <p>Tokyo Current Temp: </p> */}
+      </div>
       <Errors />
         <Switch>
           {/* <Route exact path="/" render={<Home />} />

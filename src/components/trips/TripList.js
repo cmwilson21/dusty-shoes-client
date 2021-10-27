@@ -7,6 +7,7 @@ import { loadTrips } from '../../actions/trips'
 // import { loadToGo } from '../../actions/trips'
 import { baseURL } from '../../Globals';
 // import { getCurrentUser } from '../../actions/sessions'
+import { Button } from '@mui/material'
 
 const TripList = () => {
   const trips = useSelector(state => state.trips)
@@ -46,7 +47,7 @@ const TripList = () => {
         <NavLink to={`/trips/${trip.id}`}>
           {trip.city}, {trip.country}
         </NavLink>
-          <button onClick={() => deleteTrip(trip.id)}>Delete</button>
+          <Button onClick={() => deleteTrip(trip.id)}>Delete</Button>
       </li>
         ) : (
           null

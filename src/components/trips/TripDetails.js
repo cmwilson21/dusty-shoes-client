@@ -5,6 +5,14 @@ import { baseURL } from '../../Globals';
 // import {useHistory} from 'react-router-dom'
 import { useSelector } from 'react-redux'
 // import { loadTrips } from '../../actions/trips';
+import { Grid, Card, Paper, CardContent,Button } from '@mui/material'
+
+
+
+
+
+
+
 
 const TripDetails = () => {
   const {id} = useParams();
@@ -59,7 +67,7 @@ const TripDetails = () => {
 
 
 
-  // console.log("beenThere", trip.been_there)
+  console.log("beenThere", trip.been_there)
   
   
 
@@ -68,11 +76,17 @@ const TripDetails = () => {
   return (
     //  need a way to switch up the details page if trip.been_there === true ? <button>Add Review</button> else <button>Been There</button>
     <div>
-      {/* try creating a trip card here that passes in the below stuff and also  */}
-      <h2>{trip.city}, {trip.country}</h2>
-      <img src={trip.image_url} alt="travel pic" />
-      <br />
-      <button onClick={handleClick}>Been There</button>
+      {/* <Grid> */}
+        {/* <Paper> */}
+          <Card item>
+            {/* try creating a trip card here that passes in the below stuff and also  */}
+            <CardContent>{trip.city}, {trip.country}</CardContent>
+            <img src={trip.image_url} alt="travel pic" />
+            <br />
+            {trip.been_there ? <Button>Add Journal</Button> : <Button onClick={handleClick}>Been There</Button>}
+          </Card>
+        {/* </Paper> */}
+      {/* </Grid> */}
     </div>
   )
 }

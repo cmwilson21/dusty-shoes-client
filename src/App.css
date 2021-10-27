@@ -38,5 +38,36 @@
 }
 
 .navbar_link{
-  margin:5px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  /* margin:5px; */
+}
+
+.navbar_link:hover {
+  background-color: rgb(101, 127, 207);
+}
+
+.nav-ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(83, 100, 153)
+}
+
+.nav-li{
+  /* display: block; */
+  float: left;
+}
+
+.map {
+  width: 35%;
+  height: auto;
+}
+
+img {
+  border-radius: 5%;
 }
