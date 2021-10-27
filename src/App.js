@@ -14,6 +14,7 @@ import TripDetails from './components/trips/TripDetails';
 import Errors from './components/static/Errors';
 
 
+
 function App() {
   // const requesting = useSelector(state => state.requesting);
   const city = 'london'
@@ -37,12 +38,8 @@ function App() {
     return (((k - 273.15) * 1.8) + 32).toFixed()
   }
 
-  
+
   const dispatch = useDispatch();
-
-
-
-
 
 
   useEffect(() => {
