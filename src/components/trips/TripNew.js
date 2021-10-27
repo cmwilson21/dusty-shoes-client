@@ -11,7 +11,8 @@ const TripNew = () => {
     country: "",
     image_url: "",
     user_id: currentUser.id,
-    been_there: false
+    been_there: false,
+    reason: ""
   })
   const history = useHistory()
   const dispatch = useDispatch()
@@ -70,6 +71,8 @@ const TripNew = () => {
         <TextField id="country" name="country" placeholder="Enter country name" value={state.country} onChange={handleChange} />
         <br/>
         <TextField id="image" name="image_url" placeholder="Enter image url" value={state.image_url} onChange={handleChange}/>
+        <br />
+        <TextField multiline rows={4} id="outlined-multiline-static" name="reason" placeholder="Why would you like to visit this place?" value={state.reason} onChange={handleChange}/>
         <br />
         <Button type="submit">Add Trip</Button>
       </div>

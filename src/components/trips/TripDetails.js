@@ -83,8 +83,10 @@ const TripDetails = () => {
             <CardContent >{trip.city}, {trip.country}
             <br/>
             <img style={{marginTop: "8px"}} src={trip.image_url} alt="travel pic" />
+            <br />
+            {/* <p style={{textDecoration: "underline"}}>Why do you want to go?</p> */}
+            <p>{trip.reason}</p>
             </CardContent>
-            {/* <br /> */}
             {trip.been_there ? <Button>Add Journal</Button> : <Button onClick={handleClick}>Been There</Button>}
           </Card>
         {/* </Paper> */}
