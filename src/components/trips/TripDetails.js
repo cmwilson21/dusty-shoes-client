@@ -3,9 +3,9 @@ import {useParams, useHistory} from 'react-router-dom'
 // import { NavLink} from 'react-router-dom';
 import { baseURL } from '../../Globals';
 // import {useHistory} from 'react-router-dom'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 // import { loadTrips } from '../../actions/trips';
-import { Grid, Card, Paper, CardContent,Button } from '@mui/material'
+import { Card, CardContent,Button } from '@mui/material'
 
 
 
@@ -78,11 +78,13 @@ const TripDetails = () => {
     <div>
       {/* <Grid> */}
         {/* <Paper> */}
-          <Card item>
+          <Card style={{margin: "0 750px 0 750px"}}item>
             {/* try creating a trip card here that passes in the below stuff and also  */}
-            <CardContent>{trip.city}, {trip.country}</CardContent>
-            <img src={trip.image_url} alt="travel pic" />
-            <br />
+            <CardContent >{trip.city}, {trip.country}
+            <br/>
+            <img style={{marginTop: "8px"}} src={trip.image_url} alt="travel pic" />
+            </CardContent>
+            {/* <br /> */}
             {trip.been_there ? <Button>Add Journal</Button> : <Button onClick={handleClick}>Been There</Button>}
           </Card>
         {/* </Paper> */}

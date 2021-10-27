@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink, useHistory } from 'react-router-dom'
 import { loadTrips } from '../../actions/trips'
-import { Grid, Card, Paper, CardContent, Button, Container } from '@mui/material'
+import { Grid, Card, CardContent} from '@mui/material'
 import CheckIcon from '@mui/icons-material/Check';
 
 

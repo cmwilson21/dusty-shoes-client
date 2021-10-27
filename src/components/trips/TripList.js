@@ -8,7 +8,7 @@ import { loadTrips } from '../../actions/trips'
 import { baseURL } from '../../Globals';
 // import { getCurrentUser } from '../../actions/sessions'
 // import { Button } from '@mui/material'
-import { Grid, Card, Paper, CardContent, Button, Container } from '@mui/material'
+import { Grid, Card, CardContent, Button } from '@mui/material'
 
 const TripList = () => {
   const trips = useSelector(state => state.trips)
@@ -50,6 +50,8 @@ const TripList = () => {
               <NavLink to={`/trips/${trip.id}`}>
                 {trip.city}, {trip.country}
               </NavLink>
+              <br />
+              <img style={{marginTop: "8px"}} src={trip.image_url} />
             </CardContent>
             <Button onClick={() => deleteTrip(trip.id)}>Delete</Button>
           </Card>
