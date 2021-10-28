@@ -54,7 +54,7 @@ const Login = () => {
       <div>
       <h3>Please Login Below</h3>
       <TextField required id="standard-required"  helperText="Email"  label="Required" name="email" placeholder="Enter your email" autoFocus={true} onChange={handleChange}/>
-      <TextField required  id="outlined-required" helperText="Password" label="Required" name="password" type="password" name="password" id="password" placeholder="Enter your password" onChange={handleChange}/>
+      <TextField required  id="outlined-required" helperText="Password" label="Required" type="password" name="password" placeholder="Enter your password" onChange={handleChange}/>
       <br />
       <Button type="submit">Login</Button>
 

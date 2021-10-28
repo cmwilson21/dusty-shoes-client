@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react'
-import {useParams, useHistory} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useParams, useHistory } from 'react-router-dom'
 // import { NavLink} from 'react-router-dom';
-import { baseURL } from '../../Globals';
+import { baseURL, imgDetails } from '../../Globals';
 // import {useHistory} from 'react-router-dom'
 // import { useSelector } from 'react-redux'
 // import { loadTrips } from '../../actions/trips';
-import { Card, CardContent,Button } from '@mui/material'
+import { Grid, Card, CardContent, Button } from '@mui/material'
 
 
 
@@ -15,12 +15,12 @@ import { Card, CardContent,Button } from '@mui/material'
 
 
 const TripDetails = () => {
-  const {id} = useParams();
+  const { id } = useParams();
   const history = useHistory();
   const [trip, setTrip] = useState({})
   const [loading, setLoading] = useState(true)
   // const trips = useSelector(state => state.trips)
-  
+
 
 
   const loadTrip = async () => {
@@ -36,7 +36,7 @@ const TripDetails = () => {
     // console.log('trip from details', data)
   }
 
- 
+
 
   const load = async () => {
     await loadTrip();
@@ -55,7 +55,7 @@ const TripDetails = () => {
       "Accept": 'application/json',
       "Content-Type": "application/json"
     }
-    const body = {been_there: !trip.been_there}
+    const body = { been_there: !trip.been_there }
     const options = {
       method: "PATCH",
       headers,
@@ -73,28 +73,27 @@ const TripDetails = () => {
 
 
   // console.log("beenThere", trip.been_there)
-  
-  
 
-  if(loading) {return <h2>Loading...</h2>}
+
+
+  if (loading) { return <h2>Loading...</h2> }
 
   return (
-    <div>
-      {/* <Grid> */}
-        {/* <Paper> */}
-          <Card style={{margin: "0 750px 0 750px"}} item>
-            <CardContent >{trip.city}, {trip.country}
-            <br/>
-            <img style={{marginTop: "8px"}} src={trip.image_url} alt="travel pic" />
-            <br />
-            {/* <p style={{textDecoration: "underline"}}>Why do you want to go?</p> */}
-            <p>{trip.reason}</p>
-            </CardContent>
-            {trip.been_there ? <Button onClick={handleJournal}>Add Journal</Button> : <Button onClick={handleClick}>Been There</Button>}
-          </Card>
-        {/* </Paper> */}
-      {/* </Grid> */}
-    </div>
+    <div align="center">
+      <Grid item>
+          {/* <Card style={{ margin: "0 750px 0 750px" }} item> */}
+          <Card sx={{maxWidth: 345}} style={{ marginTop: "12px" }} item>
+        <CardContent >{trip.city}, {trip.country}
+          <br />
+          <img style={{...imgDetails}} src={trip.image_url} alt="travel pic" />
+          <br />
+          {/* <p style={{textDecoration: "underline"}}>Why do you want to go?</p> */}
+          <p>{trip.reason}</p>
+        </CardContent>
+        {trip.been_there ? <Button onClick={handleJournal}>Add Journal</Button> : <Button onClick={handleClick}>Been There</Button>}
+      </Card>
+    </Grid>
+    </div >
   )
 }
 

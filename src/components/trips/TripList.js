@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { loadTrips } from '../../actions/trips'
 // import { deleteTrip } from '../../actions/trips'
 // import { loadToGo } from '../../actions/trips'
-import { baseURL } from '../../Globals';
+import { baseURL, imgDetails } from '../../Globals';
 // import { getCurrentUser } from '../../actions/sessions'
 // import { Button } from '@mui/material'
 import { Grid, Card, CardContent, Button } from '@mui/material'
@@ -45,13 +45,13 @@ const TripList = () => {
     <div key={index} align="center">
       {trip.been_there === false ? (
         <Grid item md={3}>
-          <Card style={{ marginTop: "12px" }}>
+          <Card sx={{maxWidth: 345}} style={{ marginTop: "12px" }}>
             <CardContent>
               <NavLink to={`/trips/${trip.id}`}>
                 {trip.city}, {trip.country}
               </NavLink>
               <br />
-              <img style={{marginTop: "8px"}} src={trip.image_url} />
+              <img style={{...imgDetails}} src={trip.image_url} alt="travel" />
             </CardContent>
             <Button onClick={() => deleteTrip(trip.id)}>Delete</Button>
           </Card>
@@ -66,10 +66,11 @@ const TripList = () => {
     return <h1>Loading...</h1>
   }
 
-
+  
   return (
     <div>
       {tripsLi}
+      <h4>Add a new trip to see it on your list.</h4>
     </div>
   )
 }
