@@ -72,7 +72,7 @@ const TripDetails = () => {
 
 
 
-  console.log("beenThere", trip.been_there)
+  // console.log("beenThere", trip.been_there)
   
   
 
