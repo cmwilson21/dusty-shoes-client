@@ -42,9 +42,9 @@ function App() {
   //   , [initialLoad])
 
 
-  const kelvinToFarenheight = (k) => {
-    return (((k - 273.15) * 1.8) + 32).toFixed()
-  }
+  // const kelvinToFarenheight = (k) => {
+  //   return (((k - 273.15) * 1.8) + 32).toFixed()
+  // }
 
 
   const dispatch = useDispatch();
@@ -64,7 +64,7 @@ function App() {
         <div className="App">
           <NavBar />
           <div className="weather">
-            <p>{weather.name}: {kelvinToFarenheight(weather.main.temp)}°F</p>
+            {/* <p>{weather.name}: {kelvinToFarenheight(weather.main.temp)}°F</p> */}
           </div>
           <Errors />
           <Switch>
