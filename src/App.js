@@ -30,16 +30,16 @@ function App() {
 
 
 
-  useEffect(() => {
-    if (!initialLoad)
-      fetch(apiUrl)
-        .then((res) => res.json())
-        .then((data) => {
-          setWeather(data)
-          setInitialLoad(true)
-        })
-  }
-    , [initialLoad])
+  // useEffect(() => {
+  //   if (!initialLoad)
+  //     fetch(apiUrl)
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setWeather(data)
+  //         setInitialLoad(true)
+  //       })
+  // }
+  //   , [initialLoad])
 
 
   const kelvinToFarenheight = (k) => {
@@ -58,7 +58,7 @@ function App() {
   const d = new Date();
   let year = d.getFullYear()
 
-  if (weather.main) {
+  // if (weather.main) {
     return (
       <Router>
         <div className="App">
@@ -85,9 +85,9 @@ function App() {
         <footer align="center" className="footer--pin">Dusty Shoes {year}</footer>
       </Router>
     );
-  }
-  else 
-    return null
+  // }
+  // else 
+  //   return null
 }
 
 export default App;
