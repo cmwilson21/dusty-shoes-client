@@ -21,30 +21,30 @@ function App() {
   // const requesting = useSelector(state => state.requesting);
   // const city = 'london'
   const [weather, setWeather] = useState({})
-  // const apiKey = process.env.REACT_APP_API_KEY;
   const cityArray = ["Tokyo", "London", "Paris", "Singapore", "Amsterdam", "Chicago", "Madrid", "Moscow", "Toronto", "Sydney", "Berlin", "Istanbul", "Lagos", "Cairo"]
   const randomCity = cityArray[Math.floor(Math.random() * cityArray.length)];
-  const apiKey = '069caffaa91daf864764d9b632ee4120'
+  const apiKey = process.env.REACT_APP_API_KEY;
+  // const apiKey = '069caffaa91daf864764d9b632ee4120'
   const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${randomCity}&APPID=${apiKey}`
   const [initialLoad, setInitialLoad] = useState(false)
 
 
 
-  // useEffect(() => {
-  //   if (!initialLoad)
-  //     fetch(apiUrl)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setWeather(data)
-  //         setInitialLoad(true)
-  //       })
-  // }
-  //   , [initialLoad])
+  useEffect(() => {
+    if (!initialLoad)
+      fetch(apiUrl)
+        .then((res) => res.json())
+        .then((data) => {
+          setWeather(data)
+          setInitialLoad(true)
+        })
+  }
+    , [initialLoad])
 
 
-  // const kelvinToFarenheight = (k) => {
-  //   return (((k - 273.15) * 1.8) + 32).toFixed()
-  // }
+  const kelvinToFarenheight = (k) => {
+    return (((k - 273.15) * 1.8) + 32).toFixed()
+  }
 
 
   const dispatch = useDispatch();
@@ -58,13 +58,13 @@ function App() {
   const d = new Date();
   let year = d.getFullYear()
 
-  // if (weather.main) {
+  if (weather.main) {
     return (
       <Router>
         <div className="App">
           <NavBar />
           <div className="weather">
-            {/* <p>{weather.name}: {kelvinToFarenheight(weather.main.temp)}°F</p> */}
+            <p>{weather.name}: {kelvinToFarenheight(weather.main.temp)}°F</p>
           </div>
           <Errors />
           <Switch>
@@ -85,9 +85,9 @@ function App() {
         <footer align="center" className="footer--pin">Dusty Shoes {year}</footer>
       </Router>
     );
-  // }
-  // else 
-  //   return null
+  }
+  else 
+    return null
 }
 
 export default App;
