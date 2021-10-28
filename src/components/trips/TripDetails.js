@@ -82,7 +82,7 @@ const TripDetails = () => {
     <div>
       {/* <Grid> */}
         {/* <Paper> */}
-          <Card style={{margin: "0 750px 0 750px"}}item>
+          <Card style={{margin: "0 750px 0 750px"}} item>
             <CardContent >{trip.city}, {trip.country}
             <br/>
             <img style={{marginTop: "8px"}} src={trip.image_url} alt="travel pic" />
