@@ -25,7 +25,7 @@ function App() {
   const randomCity = cityArray[Math.floor(Math.random() * cityArray.length)];
   const apiKey = process.env.REACT_APP_API_KEY;
   // const apiKey = '069caffaa91daf864764d9b632ee4120'
-  const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${randomCity}&APPID=${apiKey}`
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${randomCity}&APPID=${apiKey}`
   const [initialLoad, setInitialLoad] = useState(false)
 
 
