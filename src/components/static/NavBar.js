@@ -28,7 +28,7 @@ const NavBar = () => {
           <li className="nav-li"><NavLink className="navbar_link" to="/trips/new">Add A Trip</NavLink></li>
           <li className="nav-li"><NavLink className="navbar_link" to="/journal">Travel Journal</NavLink></li>
           <li className="nav-li"><NavLink className="navbar_link" to="/logout" onClick={logoutClick}>Logout</NavLink></li>
-        <p style={{color: "white", textAlign: "right", marginRight: "55px"}}>Where to next, {firstName}?</p>
+        <NavLink style={{textDecoration: "none"}} to="/trips/new"><p style={{color: "white", textAlign: "right", marginRight: "55px"}}>Where to next, {firstName}?</p></NavLink>
         </ul>
       </div>
     )
