@@ -29,7 +29,8 @@ const TripList = () => {
       history.push("/login")
     }
   }, [loggedIn])
-
+  
+ console.log("trips from triplist", trips)
 
   const removeTrip = id => { trips.filter(trip => trip.id !== id) }
 

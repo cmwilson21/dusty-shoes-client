@@ -1,9 +1,18 @@
-const initialState = []
+const initialState = {
+  journals: [],
+  journalEntry:{
+    content: "",
+    id:""
+  }
+}
 
 const journalsReducer = (state=initialState, action) => {
   switch(action.type) {
-    case "MOVE_TRIP":
-      return [...state, action.payload]
+    case "ADD_JOURNAL":
+      // return [...state, action.payload]
+      return {...state, journalEntry:{...state.journalEntry, payload}}
+    case "SET_JOURNALS":
+     return action.payload
     default:
       return state
   }

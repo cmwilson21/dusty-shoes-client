@@ -48,7 +48,8 @@ const TripDetails = () => {
     load();
   }, [id])
 
-
+  console.log("trip from details", trip)
+  console.log("journal", trip.journals)
 
   const handleClick = () => {
     const headers = {
@@ -93,6 +94,7 @@ const TripDetails = () => {
         {trip.been_there ? <Button onClick={handleJournal}>Add Journal</Button> : <Button onClick={handleClick}>Been There</Button>}
       </Card>
     </Grid>
+    {trip.been_there ? "trip journal!" : null }
     </div >
   )
 }
