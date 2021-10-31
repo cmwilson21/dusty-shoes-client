@@ -19,10 +19,10 @@ export const addJournal = (details, token, trip_id) => {
   }
 }
 
-export const loadJournals = (token, currentUser) => {
+export const loadJournals = (token, currentUser, trip_id) => {
   return async dispatch => {
     dispatch({type: "REQUESTING"});
-    const resp = await fetch(baseURL + `api/v1/users/${currentUser.id}/trips/journal`,
+    const resp = await fetch(baseURL + `api/v1/users/${currentUser}/trips/${trip_id}/journal`,
     {
       headers: {
         "Accept": "application/json",

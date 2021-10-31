@@ -14,6 +14,7 @@ import Login from './components/sessions/Login';
 import Signup from './components/sessions/Signup';
 import TripDetails from './components/trips/TripDetails';
 import Errors from './components/static/Errors';
+import JournalEntries from './components/journal/JournalEntries';
 
 
 
@@ -77,7 +78,7 @@ function App() {
             <Route exact path="/trips/new" component={TripNew} />
             <Route exact path="/trips/:id" component={TripDetails} />
             <Route exact path="/journal" component={JournalList} />
-            {/* <Route exact path="/trips/:id/journals" component={JournalList} /> */}
+            <Route exact path="/trips/:id/journals" component={JournalEntries} />
             <Route exact path="/journal/new" component={JournalNew} />
             <Route exat path="/login" component={Login} />
             <Route exat path="/signup" component={Signup} />

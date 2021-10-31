@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-// import { NavLink} from 'react-router-dom';
 import { baseURL, imgDetails } from '../../Globals';
-// import {useHistory} from 'react-router-dom'
-// import { useSelector } from 'react-redux'
-// import { loadTrips } from '../../actions/trips';
 import { Grid, Card, CardContent, Button } from '@mui/material'
-
-
-
-
 
 
 
@@ -19,7 +11,6 @@ const TripDetails = () => {
   const history = useHistory();
   const [trip, setTrip] = useState({})
   const [loading, setLoading] = useState(true)
-  // const trips = useSelector(state => state.trips)
 
 
 
@@ -33,7 +24,6 @@ const TripDetails = () => {
     })
     const data = await resp.json();
     setTrip(data)
-    // console.log('trip from details', data)
   }
 
 
@@ -47,9 +37,6 @@ const TripDetails = () => {
   useEffect(() => {
     load();
   }, [id])
-
-  console.log("trip from details", trip)
-  console.log("journal", trip.journals)
 
   const handleClick = () => {
     const headers = {
@@ -72,7 +59,7 @@ const TripDetails = () => {
   }
 
 
-
+  // const journalCard = 
   // console.log("beenThere", trip.been_there)
 
 
@@ -91,10 +78,11 @@ const TripDetails = () => {
           {/* <p style={{textDecoration: "underline"}}>Why do you want to go?</p> */}
           <p>{trip.reason}</p>
         </CardContent>
-        {trip.been_there ? <Button onClick={handleJournal}>Add Journal</Button> : <Button onClick={handleClick}>Been There</Button>}
+        {/* {trip.been_there ? <Button onClick={handleJournal}>Add Journal</Button> : <Button onClick={handleClick}>Been There</Button>} */}
+        {trip.been_there ? "Hope you enjoyed your trip. On to the next one!" : <Button onClick={handleClick}>Been There</Button>}
       </Card>
     </Grid>
-    {trip.been_there ? "trip journal!" : null }
+    {/* {trip.been_there ? <JournalCard trip={trip} /> : null } */}
     </div >
   )
 }

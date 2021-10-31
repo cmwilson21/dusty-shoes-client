@@ -30,7 +30,7 @@ const TripList = () => {
     }
   }, [loggedIn])
   
- console.log("trips from triplist", trips)
+//  console.log("trips from triplist", trips)
 
   const removeTrip = id => { trips.filter(trip => trip.id !== id) }
 

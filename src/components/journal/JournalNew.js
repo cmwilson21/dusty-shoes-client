@@ -1,55 +1,56 @@
-import React, {useState} from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { addJournal } from '../../actions/journalActions'
-import { useHistory, useParams } from 'react-router'
-// import { baseURL } from '../../Globals';
+// import React, {useState, useEffect} from 'react'
+// import {useHistory, useParams} from 'react-router-dom'
+// import { baseURL } from '../../Globals'
+
+// const JournalNew = () => {
+//   const [trip, setTrip] = useState(null)
+//   const [loading, setLoading] = useState(true)
+//   const [state, setState] = useState("")
+//   const history = useHistory();
+//   // const {tripId} = useParams()
+
+//   // useEffect(() => {
+//   //   const loadTrip = async () => {
+//   //     const resp = await fetch(baseURL + `/api/v1/trips/${trip.id}`)
+//   //     const data = await resp.json();
+//   //     setTrip(data);
+//   //     setLoading(false);
+//   //   }
+//   //   console.log("tripID", trip.id)
+//   //   loadTrip();
+//   // }, [tripId])
+
+//   if (loading) {return <h3>Loading...</h3>}
+
+//   const handleChange = e => {
+//     setState(e.target.value)
+//   }
+
+//   const handleSubmit = async e => {
+//     e.preventDefault();
+//     const data = {content: state}
+//     const headers = {
+//       "Accept": "application/json",
+//       "Content-Type": "application/json"
+//     }
+//     const options = {
+//       method: "POST",
+//       headers,
+//       body: JSON.stringify(data)
+//     }
+//     await fetch(baseURL + `/api/v1/trips/${trip.id}/journals`, options)
+//     history.push(`/trips/${tripId}`)
+//   }
 
 
-const JournalNew = () => {
-  const currentUser = useSelector(state => state.sessions.currentUser)
-  const trips = useSelector(state => state.trips)
-  const [state, setState] = useState({
-    content: "",
-    // trip_id: trips.id
-    trip_id: ""
-  })
-  const history = useHistory();
-  const dispatch = useDispatch();
-  const {id} = useParams();
-  // const [trip, setTrip] = useState({})
+//   return (
+//     <div>
+//       <form onSubmit={handleSubmit}>
+//         <input type="text" id="content" value={state} onChange={handleChange} autoFocus={true} />
+//         <input type="submit" value="Enter journal entry" />
+//       </form>
+//     </div>
+//   )
+// }
 
- const tripData = trips.map(trip => trip.id)
- console.log("tripData", tripData)
-
- 
- function handleChange(event) {
-   setState(event.target.value);
-  }
-  
-  console.log("trip from new journal", trips)
-  
-  const handleSubmit = e => {
-    e.preventDefault();
-    dispatch(addJournal(state, tripData, currentUser.id))
-    console.log("id from new", id)
-    console.log("current user journal new", currentUser.id)
-    history.push(`/trip/${id}`)
-    // console.log("id from params", id)
-    // console.log("new journal", tripData.id)
-  }
-
-
-
-  return (
-    <div>
-      <p>Add new journal entry form here. This would actually be an update once the "Been there" button has been clicked. It will redirect you to a page where the "reason to visit" changes to a journal entry.</p>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="journal">Journal:</label>
-        <input type="text" name="journal" id="journal" placeholder="Enter a few notes about your trip" onChange={handleChange} value={state.content}/>
-        <input type="submit" value="Add Journal" />
-      </form>
-    </div>
-  )
-}
-
-export default JournalNew
+// export default JournalNew
