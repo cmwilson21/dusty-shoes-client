@@ -12,6 +12,7 @@ import Login from './components/sessions/Login';
 import Signup from './components/sessions/Signup';
 import TripDetails from './components/trips/TripDetails';
 import Errors from './components/static/Errors';
+import { travelQuotesArray } from './Globals';
 
 
 
@@ -19,10 +20,11 @@ function App() {
   const [weather, setWeather] = useState({})
   const cityArray = ["Tokyo", "London", "Paris", "Singapore", "Amsterdam", "Chicago", "Madrid", "Moscow", "Toronto", "Sydney", "Berlin", "Istanbul", "Lagos", "Cairo"]
   const randomCity = cityArray[Math.floor(Math.random() * cityArray.length)];
-  const apiKey = process.env.REACT_APP_API_KEY;
+  // const apiKey = process.env.REACT_APP_API_KEY;
+  const apiKey = '069caffaa91daf864764d9b632ee4120'
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${randomCity}&APPID=${apiKey}`
   const [initialLoad, setInitialLoad] = useState(false)
-
+  const randomQuote = travelQuotesArray[Math.floor(Math.random() * travelQuotesArray.length)]
 
 
   useEffect(() => {
@@ -73,6 +75,9 @@ function App() {
             <Route exat path="/login" component={Login} />
             <Route exat path="/signup" component={Signup} />
           </Switch>
+        </div>
+        <div className="quote">
+        <p>{randomQuote}</p>
         </div>
         <footer align="center" className="footer--pin">Dusty Shoes {year}</footer>
       </Router>

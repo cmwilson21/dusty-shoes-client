@@ -4,6 +4,12 @@
   font-family: 'Raleway', sans-serif;
 }
 
+.quote {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  color: rgb(100, 100, 100);
+}
+
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;
