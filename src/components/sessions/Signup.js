@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { signup } from '../../actions/sessions'
 import { useHistory } from 'react-router-dom'
@@ -26,6 +26,12 @@ const Signup = () => {
     // console.log('state', state)
     dispatch(signup(state, history))
   } 
+
+  useEffect(() => {
+    return () => {
+      dispatch({type:"CLEAR_ERRORS"})
+    }
+  }, [dispatch])
 
 
   return (

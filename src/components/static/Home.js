@@ -7,7 +7,7 @@ const Home = () => {
   const currentUser = useSelector(state => state.sessions.currentUser)
 
 
-  if(loggedIn.user) {
+  if(loggedIn) {
     const firstName = `${currentUser.first_name}`
     return (
       <div>

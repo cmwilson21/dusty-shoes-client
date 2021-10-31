@@ -16,10 +16,10 @@ const NavBar = () => {
     history.push('/')
   }
 
-  console.log("in", loggedIn)
+  // console.log("in", loggedIn)
 
 
-  if (loggedIn.user) {
+  if (loggedIn) {
     const firstName = `${currentUser.first_name}`
     return (
       <div>
