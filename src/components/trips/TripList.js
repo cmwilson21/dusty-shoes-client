@@ -24,7 +24,7 @@ const TripList = () => {
       history.push("/login")
     }
   }, [loggedIn, dispatch, currentUser, history])
-  
+
 
   const removeTrip = id => { trips.filter(trip => trip.id !== id) }
 
@@ -40,13 +40,13 @@ const TripList = () => {
     <div key={index} align="center">
       {trip.been_there === false ? (
         <Grid item md={3}>
-          <Card sx={{maxWidth: 345}} style={{ marginTop: "12px" }}>
+          <Card sx={{ maxWidth: 345 }} style={{ marginTop: "12px" }}>
             <CardContent>
               <NavLink to={`/trips/${trip.id}`}>
                 {trip.city}, {trip.country}
               </NavLink>
               <br />
-              <img style={{...imgDetails}} src={trip.image_url} alt="travel" />
+              <img style={{ ...imgDetails }} src={trip.image_url} alt="travel" />
             </CardContent>
             <Button onClick={() => deleteTrip(trip.id)}>Delete</Button>
           </Card>
@@ -61,7 +61,7 @@ const TripList = () => {
     return <h1>Loading...</h1>
   }
 
-  
+
   return (
     <div>
       {tripsLi}

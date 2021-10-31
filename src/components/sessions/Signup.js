@@ -25,11 +25,11 @@ const Signup = () => {
     e.preventDefault();
     // console.log('state', state)
     dispatch(signup(state, history))
-  } 
+  }
 
   useEffect(() => {
     return () => {
-      dispatch({type:"CLEAR_ERRORS"})
+      dispatch({ type: "CLEAR_ERRORS" })
     }
   }, [dispatch])
 
@@ -46,11 +46,11 @@ const Signup = () => {
     >
       <div>
         <h3>Please Signup Below</h3>
-        <TextField required label="Required" variant="filled" id="outlined-required" name="first_name" value={state.first_name} placeholder="First Name" autoFocus={true} helperText="First Name" onChange={handleChange}/>
+        <TextField required label="Required" variant="filled" id="outlined-required" name="first_name" value={state.first_name} placeholder="First Name" autoFocus={true} helperText="First Name" onChange={handleChange} />
         <TextField required label="Required" variant="filled" name="last_name" id="filled-required" value={state.last_name} placeholder="Last Name" helperText="Last Name" onChange={handleChange} />
         <br />
-        <TextField required label="Required" variant="filled" name="email" id="email" value={state.email} placeholder="Enter your email" helperText="Email" onChange={handleChange}/>
-        <TextField required label="Required" variant="filled" type="password" name="password" id="password" value={state.password} placeholder="Create a password" helperText="Password" onChange={handleChange}/>
+        <TextField required label="Required" variant="filled" name="email" id="email" value={state.email} placeholder="Enter your email" helperText="Email" onChange={handleChange} />
+        <TextField required label="Required" variant="filled" type="password" name="password" id="password" value={state.password} placeholder="Create a password" helperText="Password" onChange={handleChange} />
         <br />
         <Button type="submit">Signup</Button>
       </div>

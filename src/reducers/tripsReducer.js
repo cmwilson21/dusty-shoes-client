@@ -5,8 +5,8 @@ const initialState = []
 
 
 
-const tripsReducer = (state=initialState, action) => {
-  switch(action.type) {
+const tripsReducer = (state = initialState, action) => {
+  switch (action.type) {
     case "ADD_TRIP":
       return [...state, action.payload]
     case "SET_TRIPS":

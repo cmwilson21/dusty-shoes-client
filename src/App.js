@@ -70,20 +70,18 @@ function App() {
             <Route exact path="/trips/new" component={TripNew} />
             <Route exact path="/trips/:id" component={TripDetails} />
             <Route exact path="/journal" component={JournalList} />
-            {/* <Route exact path="/trips/:id/journals" component={JournalEntries} /> */}
-            {/* <Route exact path="/journal/new" component={JournalNew} /> */}
             <Route exat path="/login" component={Login} />
             <Route exat path="/signup" component={Signup} />
           </Switch>
         </div>
         <div className="quote">
-        <p>{randomQuote}</p>
+          <p>{randomQuote}</p>
         </div>
         <footer align="center" className="footer--pin">Dusty Shoes {year}</footer>
       </Router>
     );
   }
-  else 
+  else
     return null
 }
 

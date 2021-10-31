@@ -14,7 +14,7 @@ export const addTrip = (details, token) => {
       body: JSON.stringify(details)
     })
     const data = await resp.json()
-    dispatch({type: "ADD_TRIP", payload: data})
+    dispatch({ type: "ADD_TRIP", payload: data })
   }
 }
 
@@ -22,7 +22,7 @@ export const addTrip = (details, token) => {
 export const loadTrips = (token, currentUser) => {
   // console.log("current user trips action 2", currentUser)
   return async dispatch => {
-    dispatch({type: "REQUESTING"});
+    dispatch({ type: "REQUESTING" });
     const resp = await fetch(baseURL + `/api/v1/users/${currentUser.id}/trips`, {
       headers: {
         "Accept": "application/json",
@@ -31,9 +31,9 @@ export const loadTrips = (token, currentUser) => {
       }
     })
     const data = await resp.json();
-    dispatch({type: "SET_TRIPS", payload: data})
+    dispatch({ type: "SET_TRIPS", payload: data })
     // console.log("data from trips action", data)
     // debugger
-    dispatch({type: "COMPLETED_REQUESTING"})
+    dispatch({ type: "COMPLETED_REQUESTING" })
   }
 }

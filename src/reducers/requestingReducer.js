@@ -3,13 +3,13 @@
 
 const initialState = true;
 
-const requestingReducer = (state=initialState, action) => {
-  switch(action.type) {
+const requestingReducer = (state = initialState, action) => {
+  switch (action.type) {
     case "REQUESTING":
       return true;
     case "COMPLETED_REQUESTING":
       return false;
-    default: 
+    default:
       return state;
   }
 }

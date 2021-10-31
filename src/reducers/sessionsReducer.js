@@ -9,7 +9,7 @@ const initialState = {
   loggedIn: false
 }
 
-const sessionsReducer = (state=initialState, action) => {
+const sessionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case "LOGIN":
       return {

@@ -60,18 +60,18 @@ const TripDetails = () => {
   return (
     <div align="center">
       <Grid item>
-          <Card sx={{maxWidth: 345}} style={{ marginTop: "12px" }} item>
-        <CardContent >{trip.city}, {trip.country}
-          <br />
-          <img style={{...imgDetails}} src={trip.image_url} alt="travel pic" />
-          <br />
-          <p style={{textDecoration: "underline"}}>Why do you want to go?</p>
-          <p>{trip.reason}</p>
-        </CardContent>
-        {/* {trip.been_there ? <Button onClick={handleJournal}>Add Journal</Button> : <Button onClick={handleClick}>Been There</Button>} */}
-        {trip.been_there ? "Hope you enjoyed your trip. On to the next one!" : <Button onClick={handleClick}>Been There</Button>}
-      </Card>
-    </Grid>
+        <Card sx={{ maxWidth: 345 }} style={{ marginTop: "12px" }} item>
+          <CardContent >{trip.city}, {trip.country}
+            <br />
+            <img style={{ ...imgDetails }} src={trip.image_url} alt="travel pic" />
+            <br />
+            <p style={{ textDecoration: "underline" }}>Why do you want to go?</p>
+            <p>{trip.reason}</p>
+          </CardContent>
+          {/* {trip.been_there ? <Button onClick={handleJournal}>Add Journal</Button> : <Button onClick={handleClick}>Been There</Button>} */}
+          {trip.been_there ? "Hope you enjoyed your trip. On to the next one!" : <Button onClick={handleClick}>Been There</Button>}
+        </Card>
+      </Grid>
     </div >
   )
 }

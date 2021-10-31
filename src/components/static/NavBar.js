@@ -29,7 +29,7 @@ const NavBar = () => {
           <li className="nav-li"><NavLink className="navbar_link" to="/trips/new">Add A Trip</NavLink></li>
           <li className="nav-li"><NavLink className="navbar_link" to="/journal">Travel Journal</NavLink></li>
           <li className="nav-li"><NavLink className="navbar_link" to="/logout" onClick={logoutClick}>Logout</NavLink></li>
-        <NavLink style={{textDecoration: "none"}} to="/trips/new"><p style={{color: "white", textAlign: "right", marginRight: "55px"}}>Where to next, {firstName}?</p></NavLink>
+          <NavLink style={{ textDecoration: "none" }} to="/trips/new"><p style={{ color: "white", textAlign: "right", marginRight: "55px" }}>Where to next, {firstName}?</p></NavLink>
         </ul>
       </div>
     )
@@ -40,7 +40,7 @@ const NavBar = () => {
         <li className="nav-li"><NavLink className="navbar_link" to="/">Home</NavLink></li>
         <li className="nav-li"><NavLink className="navbar_link" to="/login">Login</NavLink></li>
         <li className="nav-li"><NavLink className="navbar_link" to="/signup">Signup</NavLink></li>
-        <p style={{color: "white", textAlign: "right", marginRight: "55px"}}>Dusty Shoes</p>
+        <p style={{ color: "white", textAlign: "right", marginRight: "55px" }}>Dusty Shoes</p>
       </ul>
     </div>
   )
