@@ -35,7 +35,7 @@ function App() {
           setInitialLoad(true)
         })
   }
-    , [initialLoad])
+    , [initialLoad, apiUrl])
 
 
   const kelvinToFarenheight = (k) => {

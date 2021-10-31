@@ -23,7 +23,7 @@ const TripList = () => {
     } else {
       history.push("/login")
     }
-  }, [loggedIn])
+  }, [loggedIn, dispatch, currentUser, history])
   
 
   const removeTrip = id => { trips.filter(trip => trip.id !== id) }

@@ -66,6 +66,7 @@ export const getCurrentUser = () => {
       user: data.user,
       jtw: localStorage.getItem('jwt')
     }
+    console.log(payload)
     if(data.user) {
       dispatch({type: "LOGIN", payload})
     }

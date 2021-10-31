@@ -23,7 +23,7 @@ const JournalList = () => {
     } else {
       history.push("/login")
     }
-  }, [loggedIn])
+  }, [loggedIn, currentUser, dispatch, history])
 
   // console.log("trips", trips)
 
