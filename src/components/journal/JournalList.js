@@ -49,8 +49,8 @@ const JournalList = () => {
 
   return (
     <div>
-      {tripsLi}
       <h4>Go somewhere and click Been There to see it in your journal.</h4>
+      {tripsLi}
     </div>
   )
 }

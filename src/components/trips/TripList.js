@@ -64,8 +64,8 @@ const TripList = () => {
 
   return (
     <div>
-      {tripsLi}
       <h4>Add a new trip to see it on your list.</h4>
+      {tripsLi}
     </div>
   )
 }
