@@ -53,11 +53,6 @@ const TripDetails = () => {
     history.push(`/journal`)
   }
 
-  const handleJournal = () => {
-    history.push(`/journal/new`)
-    console.log(handleJournal)
-  }
-
 
 
   if (loading) { return <h2>Loading...</h2> }
