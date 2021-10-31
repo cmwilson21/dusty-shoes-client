@@ -24,23 +24,6 @@ const Login = () => {
     dispatch(login(state, history))
   }
 
-
-
-
-  // return (
-  //   <div>
-  //     <form onSubmit={handleSubmit}>
-  //       <label htmlFor="email">Email:</label>
-  //       <input type="text" name="email" id="email" placeholder="Enter your email" autoFocus={true} onChange={handleChange}/>
-  //       <br />
-  //       <label htmlFor="password">Password:</label>
-  //       <input type="password" name="password" id="password" placeholder="Enter your password" onChange={handleChange}/>
-  //       <input type="submit" value="Login" />
-  //     </form>
-  //   </div>
-  // )
-
-
   return (
     <Box
     component="form"
@@ -57,8 +40,6 @@ const Login = () => {
       <TextField required  id="outlined-required" helperText="Password" label="Required" type="password" name="password" placeholder="Enter your password" onChange={handleChange}/>
       <br />
       <Button type="submit">Login</Button>
-
-
       </div>
       </Box>
 

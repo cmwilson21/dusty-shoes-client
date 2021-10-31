@@ -3,11 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import { loadTrips } from '../../actions/trips'
-// import { deleteTrip } from '../../actions/trips'
-// import { loadToGo } from '../../actions/trips'
 import { baseURL, imgDetails } from '../../Globals';
-// import { getCurrentUser } from '../../actions/sessions'
-// import { Button } from '@mui/material'
 import { Grid, Card, CardContent, Button } from '@mui/material'
 
 const TripList = () => {
@@ -24,13 +20,11 @@ const TripList = () => {
     // clearErrors();
     if (loggedIn) {
       dispatch(loadTrips(localStorage.getItem('jwt'), currentUser))
-      // console.log("trips list currentUser", currentUser)
     } else {
       history.push("/login")
     }
   }, [loggedIn])
   
-//  console.log("trips from triplist", trips)
 
   const removeTrip = id => { trips.filter(trip => trip.id !== id) }
 

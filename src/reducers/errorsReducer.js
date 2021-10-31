@@ -1,4 +1,4 @@
-// errors reducer starts as an empty array 
+
 
 const initialState = []
 

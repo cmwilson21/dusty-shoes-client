@@ -37,9 +37,6 @@ const NavBar = () => {
     <div>
       <ul className="nav-ul">
         <li className="nav-li"><NavLink className="navbar_link" to="/">Home</NavLink></li>
-        {/* <NavLink className="navbar_link" to="/trips">Trips</NavLink> */}
-        {/* <NavLink className="navbar_link" to="/trips/new">Add A Trip</NavLink> */}
-        {/* <NavLink className="navbar_link" to="/journal">Travel Journal</NavLink> */}
         <li className="nav-li"><NavLink className="navbar_link" to="/login">Login</NavLink></li>
         <li className="nav-li"><NavLink className="navbar_link" to="/signup">Signup</NavLink></li>
         <p style={{color: "white", textAlign: "right", marginRight: "55px"}}>Dusty Shoes</p>

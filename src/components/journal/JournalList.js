@@ -25,7 +25,6 @@ const JournalList = () => {
     }
   }, [loggedIn])
 
-  // console.log("trips", trips)
 
 
   const tripsLi = trips.map((trip, index) => (

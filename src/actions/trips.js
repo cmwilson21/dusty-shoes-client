@@ -1,25 +1,5 @@
-// this is updating state 
-
 import { baseURL } from "../Globals"
 
-// export const addTrip = (details, currentUser) => {
-//   const payload = {...details,
-//     user_id: currentUser.id
-//   }
-
-//   return {
-//     type: "ADD_TRIP",
-//     payload
-//   }
-// }
-
-// export const addTrip = (details, currentUser) => {
-//   return async (dispatch) => {
-//     const payload = {...details, 
-//       user_id: currentUser.id}
-//     dispatch({type: "ADD_TRIP", payload})
-//   }
-// }
 
 
 export const addTrip = (details, token) => {
@@ -57,45 +37,3 @@ export const loadTrips = (token, currentUser) => {
     dispatch({type: "COMPLETED_REQUESTING"})
   }
 }
-
-// export const deleteTrip = (id, index) => {
-//   return async dispatch => {
-//     dispatch({type: "REQUESTING"});
-//     const resp = await fetch(baseURL + `/api/v1/trips/${id}`, {method: "DELETE"})
-//     dispatch({
-//       type: "DELETE_TRIP",
-//       payload: index
-//     })
-//     dispatch({type: "COMPLETED_REQUESTING"})
-// }
-// }
-
-// export const deleteTrip = (index) => {
-//   dispatch({
-//     type: "DELETE_TRIP",
-//     payload: index
-//   })
-// }
-
-// export const deleteTrip = (index) => {
-//   dispatch({type: "DELETE_TRIP", payload: index})
-// }
-
-
-// instead of loadTrips, make a loadBeenThere and a loadToGo
-
-// export const loadToGo = (token, currentUser) => {
-//   return async dispatch => {
-//     dispatch({type: "REQUESTING"});
-//     const resp = await fetch(baseURL + `/api/v1/users/${currentUser.id}/trips`, {
-//       headers: {
-//         "Accept": "application/json",
-//         "Content-Type": "application/json",
-//         "Authorization": `bearer ${token}`
-//       }
-//     })
-//     const data = await resp.json();
-//     dispatch({type: "SET_TRIPS", payload: data})
-//     dispatch({type: "COMPLETED_REQUESTING"})
-//   }
-// }

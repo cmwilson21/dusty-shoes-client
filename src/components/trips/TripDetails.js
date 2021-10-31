@@ -59,30 +59,24 @@ const TripDetails = () => {
   }
 
 
-  // const journalCard = 
-  // console.log("beenThere", trip.been_there)
-
-
 
   if (loading) { return <h2>Loading...</h2> }
 
   return (
     <div align="center">
       <Grid item>
-          {/* <Card style={{ margin: "0 750px 0 750px" }} item> */}
           <Card sx={{maxWidth: 345}} style={{ marginTop: "12px" }} item>
         <CardContent >{trip.city}, {trip.country}
           <br />
           <img style={{...imgDetails}} src={trip.image_url} alt="travel pic" />
           <br />
-          {/* <p style={{textDecoration: "underline"}}>Why do you want to go?</p> */}
+          <p style={{textDecoration: "underline"}}>Why do you want to go?</p>
           <p>{trip.reason}</p>
         </CardContent>
         {/* {trip.been_there ? <Button onClick={handleJournal}>Add Journal</Button> : <Button onClick={handleClick}>Been There</Button>} */}
         {trip.been_there ? "Hope you enjoyed your trip. On to the next one!" : <Button onClick={handleClick}>Been There</Button>}
       </Card>
     </Grid>
-    {/* {trip.been_there ? <JournalCard trip={trip} /> : null } */}
     </div >
   )
 }
