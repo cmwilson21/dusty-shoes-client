@@ -1,3 +1,4 @@
+ /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { baseURL, imgDetails } from '../../Globals';
@@ -33,6 +34,7 @@ const TripDetails = () => {
     // await loadUser();
     setLoading(false)
   }
+ 
 
   useEffect(() => {
     load();
