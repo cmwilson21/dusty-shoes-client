@@ -21,7 +21,7 @@ export const addTrip = (details, token) => {
 
 export const loadTrips = (token, currentUser) => {
   // console.log("current user trips action 2", currentUser)
-  return async dispatch => {
+  return async (dispatch) => {
     dispatch({ type: "REQUESTING" });
     const resp = await fetch(baseURL + `/api/v1/users/${currentUser.id}/trips`, {
       headers: {
