@@ -17,7 +17,6 @@ const TripList = () => {
 
 
   useEffect(() => {
-    // clearErrors();
     if (loggedIn) {
       dispatch(loadTrips(localStorage.getItem('jwt'), currentUser))
     } else {

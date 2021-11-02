@@ -31,7 +31,6 @@ const TripDetails = () => {
 
   const load = async () => {
     await loadTrip();
-    // await loadUser();
     setLoading(false)
   }
  
