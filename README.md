@@ -13,14 +13,14 @@ Above the footer, there is a random travel quote displayed to help encourage you
 
 
 ## Technologies Used
- Markup : - React
-          - Redux
-          - JWT Backend Auth
-          - Weather API
-          - Material UI
-          - Custom CSS
+  - React
+  - Redux
+  - JWT Backend Auth
+  - Weather API
+  - Material UI
+  - Custom CSS
           
    
 ## Coming Soon
-  Markup : - Journal Feature
-           - Follow Users
+  - Journal Feature
+  - Follow Users
