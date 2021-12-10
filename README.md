@@ -24,3 +24,28 @@ Above the footer, there is a random travel quote displayed to help encourage you
 ## Coming Soon
   - Journal Feature
   - Follow Users
+
+## Code Preview
+The following code is used to display which trips show up for your Trip List. First, map through the trips array and if the trip.been_there attribute is false (meaning that you have not been on the trip), it populates a card with the trip information. Otherwise, it doesn't show on the list.
+```
+  const tripsLi = trips.map((trip, index) => (
+    <div key={index} align="center">
+      {trip.been_there === false ? (
+        <Grid item md={3}>
+          <Card sx={{ maxWidth: 345 }} style={{ marginTop: "12px" }}>
+            <CardContent>
+              <NavLink to={`/trips/${trip.id}`}>
+                {trip.city}, {trip.country}
+              </NavLink>
+              <br />
+              <img style={{ ...imgDetails }} src={trip.image_url} alt="travel" />
+            </CardContent>
+            <Button onClick={() => deleteTrip(trip.id)}>Delete</Button>
+          </Card>
+        </Grid>
+      ) : (
+        null
+      )}
+    </div>
+  ))
+  ```
