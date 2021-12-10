@@ -1,6 +1,6 @@
 # Getting Started with Dusty Shoes
 
-This is a React frontend for a travel app, Dusty Shoes. Fork and clone this repository and run yarn install to get the front end up and going. Fork and clone the backend repository, https://github.com/cmwilson21/dusty-shoes-server, and follow the README.md instructions there to get the back end going.
+This is a React frontend for a travel app, Dusty Shoes. Fork and clone this repository and run yarn install to get the front end up and going. Fork and clone the [backend repository](https://github.com/cmwilson21/dusty-shoes-server) and follow the README.md instructions there to get the back end going.
 
 Once everything is ready, run yarn start to activate the app.
 
