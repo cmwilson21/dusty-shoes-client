@@ -12,7 +12,7 @@ Under the Navbar, there is a random city displayed with current temperature.
 Above the footer, there is a random travel quote displayed to help encourage your spirit to travel.
 
 ## Video Walkthrough
-[Walkthrough] (https://www.loom.com/share/457d278a07b942cfa2fb1712a5ada185)
+[Walkthrough](https://www.loom.com/share/457d278a07b942cfa2fb1712a5ada185)
 
 
 ## Technologies Used
