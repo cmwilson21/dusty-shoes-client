@@ -10,3 +10,17 @@ Login or signup to create an account. Once an account is created, a user will ha
 
 Under the Navbar, there is a random city displayed with current temperature. 
 Above the footer, there is a random travel quote displayed to help encourage your spirit to travel.
+
+
+## Technologies Used
+ Markup : - React
+          - Redux
+          - JWT Backend Auth
+          - Weather API
+          - Material UI
+          - Custom CSS
+          
+   
+## Coming Soon
+  Markup : - Journal Feature
+           - Follow Users
