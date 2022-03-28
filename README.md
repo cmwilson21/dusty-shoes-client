@@ -1,6 +1,6 @@
 # Background
 
-In 2019, I had planned to take my first big international trip in 2020. Well, we all know what happened in 2020, so my plans were put on the back burner for a little while. So, I created Dusty Shoes as a travel app, allowing a user to list and track the places they would like to visit. 
+In 2019, I had planned to take my first big international trip in 2020. Well, we all know what happened in 2020, so my plans were put on the back burner for a little while. So, I created Dusty Shoes as a travel app, allowing a user to list and track the places they would like to visit.
 
 # Getting Started with Dusty Shoes
 
@@ -10,9 +10,27 @@ Once everything is ready, run yarn start to activate the app.
 
 ## How to Interact with the App
 
-Login or signup to create an account. Once an account is created, a user will have the options to add a new trip or view a list of trips you want to take.
+Login or signup to create an account. Once an account is created, a user will have the options to view the list of trips you'd like to take, add a new trip, or visit your journal of trips you have already taken.
 
 ### Login or Signup
+
+![](./ds-media/ds-login.gif)
+
+### View Trips to Take
+
+![](./ds-media/ds-view-trips.gif)
+
+### Add a New Trip
+
+![](./ds-media/ds-add-trip.gif)
+
+### Trip Journal
+
+![](./ds-media/ds-trip-journal.gif)
+
+### Add a Trip to Journal
+
+![](./ds-media/ds-been-there.gif)
 
 **Note:** Under the Navbar, there is a random city displayed with current temperature.
 Above the footer, there is a random travel quote displayed to help encourage your spirit to travel.
