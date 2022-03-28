@@ -1,3 +1,7 @@
+# Background
+
+In 2019, I had planned to take my first big international trip in 2020. Well, we all know what happened in 2020, so my plans were put on the back burner for a little while. So, I created Dusty Shoes as a travel app, allowing a user to list and track the places they would like to visit. 
+
 # Getting Started with Dusty Shoes
 
 This is a React frontend for a travel app, Dusty Shoes. Fork and clone this repository and run yarn install to get the front end up and going. Fork and clone the [backend repository](https://github.com/cmwilson21/dusty-shoes-server) and follow the README.md instructions there to get the back end going.
