@@ -6,30 +6,35 @@ Once everything is ready, run yarn start to activate the app.
 
 ## How to Interact with the App
 
-Login or signup to create an account. Once an account is created, a user will have the options to add a new trip or view a list of trips you want to take. 
+Login or signup to create an account. Once an account is created, a user will have the options to add a new trip or view a list of trips you want to take.
 
-Under the Navbar, there is a random city displayed with current temperature. 
+### Login or Signup
+
+**Note:** Under the Navbar, there is a random city displayed with current temperature.
 Above the footer, there is a random travel quote displayed to help encourage your spirit to travel.
 
 ## Video Walkthrough
+
 [Walkthrough](https://www.loom.com/share/457d278a07b942cfa2fb1712a5ada185)
 
-
 ## Technologies Used
-  - React
-  - Redux
-  - JWT Backend Auth
-  - Weather API
-  - Material UI
-  - Custom CSS
-          
-   
+
+- React
+- Redux
+- JWT Backend Auth
+- Weather API
+- Material UI
+- Custom CSS
+
 ## Coming Soon
-  - Journal Feature
-  - Follow Users
+
+- Journal Feature
+- Follow Users
 
 ## Code Preview
+
 The following code is used to display which trips show up for your Trip List. First, map through the trips array and if the trip.been_there attribute is false (meaning that you have not been on the trip), it populates a card with the trip information. Otherwise, it doesn't show on the list.
+
 ```
   const tripsLi = trips.map((trip, index) => (
     <div key={index} align="center">
@@ -51,4 +56,4 @@ The following code is used to display which trips show up for your Trip List. Fi
       )}
     </div>
   ))
-  ```
+```
