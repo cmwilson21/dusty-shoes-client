@@ -33,7 +33,7 @@ Login or signup to create an account. Once an account is created, a user will ha
 ![](./ds-media/ds-been-there.gif)
 
 **Note:** Under the Navbar, there is a random city displayed with current temperature.
-Above the footer, there is a random travel quote displayed to help encourage your spirit to travel.
+Above the footer, there is a random travel quote displayed to help encourage your traveling spirit.
 
 ## Video Walkthrough
 
