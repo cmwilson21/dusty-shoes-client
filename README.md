@@ -1,3 +1,17 @@
+## Table of Contents
+* [Background](#background)
+* [Getting Started](#getting-started-with-dusty-shoes)
+* [Interaction](#how-to-interact-with-the-app)
+  * [Login/Signup](#login-or-signup)
+  * [View Trips](#view-trips-to-take)
+  * [Add a New Trip](#add-a-new-trip)
+  * [Trip Journal](#trip-journal)
+  * [Add a Trip to Journal](#add-a-trip-to-journal)
+* [Video Walkthrough](#video-walkthrough)
+* [Technologies](#technologies-used)
+* [Coming Soon](#coming-soon)
+* [Code Preview](#code-preview)
+
 # Background
 
 In 2019, I had planned to take my first big international trip in 2020. Well, we all know what happened in 2020, so my plans were put on the back burner for a little while. So, I created Dusty Shoes as a travel app, allowing a user to list and track the places they would like to visit.
