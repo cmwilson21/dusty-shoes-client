@@ -12,6 +12,8 @@
 * [Coming Soon](#coming-soon)
 * [Code Preview](#code-preview)
 
+[Dusty Shoes Demo Deployed](https://dusty-shoes.herokuapp.com/)
+
 # Background
 
 In 2019, I had planned to take my first big international trip in 2020. Well, we all know what happened in 2020, so my plans were put on the back burner for a little while. So, I created Dusty Shoes as a travel app, allowing a user to list and track the places they would like to visit.
